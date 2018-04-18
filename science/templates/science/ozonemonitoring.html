@@ -1,0 +1,98 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:index' %}">Science</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:ozonemonitoring' %}">Ozone Monitoring</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<h1>Ozone Monitoring</h1>
+<h2>by Dr. Peter Bernath</h2>
+
+<p class="text">
+	Average ozone declines have been measured over much of Canada using 
+	ground-based Brewer spectrophotometers [<a href="#ref">1</a>]. Since 
+	1980 a statistically significant decrease of about 6% has been found by 
+	all five long-term Canadian stations including Toronto 
+	(44&deg;N, 79&deg;W). Ozone sonde measurements show that most of the 
+	decline has occurred in the lower stratosphere.
+</p>
+<div style="float:left; width:280px; margin-right: 25px;" align="center">
+        <a href="{% static "science/ACE_Ozone_Decline.gif" %}" 
+           class="img single_image" 
+           title="ACE Ozone Decline">
+            <img src="{% static "science/ACE_Ozone_Decline.gif" %}" 
+                 alt="Ozone Decline from 1926"
+                 width="275" height="205" 
+                 border="0"
+                 style="float:left;"
+            >
+        </a>
+	<p class="figure_title">Ozone at Arosa, Switzerland since 1926</p>
+</div>
+<p class="text">
+	The decrease in Arctic ozone is most severe in the spring as can be seen 
+	from the ground and from satellites. The total ozone column obtained from 
+	satellite-based TOMS instruments shows this decrease (averaged over the entire 
+	polar region) in the month of March. In March 1997, the ozone column was 21% 
+	less than normal and in a small region near the pole the decrease was 40% 
+	[<a href="#ref">2</a>]. Although dynamics plays a major role in redistributing 
+	ozone in the Arctic stratosphere, it seems clear that chemical loss of ozone 
+	due to heterogeneous chemistry is playing a major role. In fact, several recent 
+	publications have indicated that much of the chemical loss in the winter and 
+	springtime Arctic is often masked by transport of ozone-rich air from above 
+	[<a href="#ref">3</a>-<a href="#ref">6</a>]. Specifically Muller et al. (1997) 
+	estimate that 120-160 DU of ozone were chemically destroyed between January and 
+	March 1996 overwhelming the putative dynamical increase leading to a net loss of 
+	about 50 DU. This chemical loss is greater than that which was occurring over 
+	Antarctica when the ozone hole was first observed in 1985 [<a href="#ref">7</a>].
+</p>
+<div style="float:right; width:280px; margin:20px;" align="center">
+        <a href="{% static "science/TOMS2.jpg" %}"
+           class="img single_image" 
+           title="TOMS total ozone decline">
+            <img src="{% static "science/TOMS2.jpg" %}" 
+                 alt="TOMS total ozone decline"
+                 width="275" height="205" 
+                 border="0" align="right" style="float:right;"
+            >
+        </a>
+	<p class="figure_title">TOMS total ozone</p>
+</div>
+<p class="text">
+	The major goal of ACE is to address the question of Arctic ozone loss and, by means 
+	of modeling and measurements (both atmospheric and laboratory), to attempt to 
+	quantify the contributions from dynamics and chemistry. Since sulphate aerosol and 
+	PSCs play a major role in ozone loss in the Arctic , distinguishing between PSCs, 
+	aerosols and cirrus and other clouds is important. There is an important role for 
+	laboratory measurements. The role of modeling, either forward modeling or data 
+	assimilation, is also critical. A variety of atmospheric models ranging from simple 
+	box models for the chemistry to atmospheric global circulation models (AGCMs) are 
+	used to interpret our data.The ACE mission is also put in context with existing 
+	Canadian and international satellite instruments for atmospheric chemistry. ACE 
+	has excited substantial international interest and partners from the United States, 
+	Europe and Japan partners work together for the mission. One of our strengths is 
+	the financial commitment that our partners have made to ACE. Given the constraints 
+	on funding science in Canada , such leveraging of resources is of vital importance.
+</p>
+<p class="noprint">
+	<span style="float:left"><a href="{% url 'science:climatechange' %}"><< Previous: Ozone Loss and Climate Change</a></span>
+	<span style="float:right"><a href="{% url 'science:dataanalysis' %}">Next: Data Analysis >></a></span>
+</p><br>
+
+<h3>References</h3><a name="ref"></a>
+<ol>
+	<li class="paper_ref">Ozone Science: A Canadian Perspective on the Changing Ozone Layer, D.I. Wardle, J.B. Kerr, C.T. McElroy and D.R. Francis, eds., Environment Canada, 1997.</li>
+	<li class="paper_ref">Newman, P.A. et al., Anomalously low ozone over the Arctic, Geophys. Res. Lett., 24, 2689-2692, 1997.</li>
+	<li class="paper_ref">M&uuml;ller, R., Crutzen, P.J., Grooss, J.-U., Bruhl, C., Russell III, J.M., Gernandt, H., McKenna, D.S. and Tuck, A., Severe chemical ozone loss in the Arctic during the winter of 1995-96, Nature , 389 , 709-712, 1997.</li>
+	<li class="paper_ref">Rex, M. et al. , Prolonged stratospheric ozone loss in the 1995-1996 Arctic winter, Nature , 389 , 835-838, 1997.</li>
+	<li class="paper_ref">Knudsen, B.M. et al. , Ozone depletion in and below the Arctic vortex for 1997, Geophys. Res. Lett. , 25 , 627-630, 1998.</li>
+	<li class="paper_ref">Lefevre, F., Figarol, F., Carslaw, K.S. and Peter, T., The 1997 Arctic ozone depletion quantified from three-dimensional model simulations, Geophys. Res. Lett. , 25 , 2425-2429, 1998.</li>
+	<li class="paper_ref">Farman, J. C., Gardiner, B.G., and Shanklin, J.D., Large losses of total ozone in Antarctica reveal seasonal ClO<sub>x</sub>/NO<sub>x</sub> interaction, Nature , 315 , 207-210, 1985.</li>
+</ol>
+
+{% endblock %}

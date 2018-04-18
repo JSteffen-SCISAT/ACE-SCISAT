@@ -1,0 +1,168 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block head_addon_bottom %}
+<link href="{% static "meeting/css/meeting.css" %}" rel="stylesheet" type="text/css">
+{% endblock head_addon_bottom %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'meeting:index' %}">Ace Meeting</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+
+<div align='center'>
+<h1>ACE/SCISAT Semi Annual Meeting</h1>
+<div id="mtg_titlebox">
+	<div id="mtg_uwtitle">
+		<h2>May 7-8, 2018</h2>
+	</div> <!-- mtg_uwsubtitle -->
+</div> <!-- mtg_titlebox Div -->
+<div id="mtg_uwnavbar" class="noprint">
+	<ul id="mtg_nav">
+	    <li class="mtg_list"><a href="#gettingtowaterloo">Getting to UWaterloo</a></li>
+	    <li class="mtg_list"><a href="#trans">Transportation</a></li>
+	    <li class="mtg_list"><a href="#accommodations">Accommodations, Restaurants, and Attractions</a></li>
+	    <li class="mtg_list"><a href="#parking">Parking</a></li>
+	</ul>
+</div> <!-- mtg_navbar Div -->
+</div> <!-- title div -->
+
+<div id="mtg_details" class="mtg_border">
+	<a name="details"></a>
+	<p class="text">
+		The next ACE Meeting will be held in the Davis Centre at the University of Waterloo in Waterloo, Ontario. 
+		This meeting will focus primarily on the achievements, current work, and future plans of the ACE (SCISAT) 
+		satellite mission. In addition to the usual speakers from ACE, speakers from other missions, space 
+		agencies, modelling groups, and validation teams are invited to participate. Potential new users of ACE 
+		data are particularly encouraged to attend. 
+	</p>
+</div>
+
+<div class="mtg_grid">
+	<div class="grid-item address">
+		<ul>
+			<li class="mtg_list"><strong>Location:</strong> Davis Centre (DC) 1304, University of Waterloo</li>
+			<li class="mtg_list"><strong>Time:</strong> 9 &#45; 5 PM</li>
+			<li class="mtg_list"><strong>Address:</strong><br>
+			<div class="indent">
+			200 University Avenue West<br>
+			Waterloo, Ontario, Canada<br>
+			N2L 3G1<br>
+			</div>
+			<li class="mtg_list"><strong>Agenda:</strong> <a href="./details/agendas/ACE-Odin-Agenda.pdf" target="_blank">PDF</a></li>
+			<li class="mtg_list"><strong>Campus Map:</strong> <a href="http://uwaterloo.ca/map/" target="_blank">Flash</a> or
+			<a href="http://www.uwaterloo.ca/map/pdf/map_colour.pdf" target="_blank">PDF</a></li>
+		</ul>
+	</div>
+	<div align='center' class="grid-item map">
+		<a href="https://www.google.ca/maps/place/Davis+Centre/@43.4726191,-80.5422005,264m/data=!3m1!1e3!4m5!3m4!1s0x0:0xbfcdb8b1e5ec45c4!8m2!3d43.4726726!4d-80.5422159"
+			title="Davis Centre on Google Earth " target="_blank">
+		<p style="position:relative; top:12px;">Click me to view on Google Maps!</p>
+		<img src="{% static "meeting/img/daviscentre.PNG" %}" width="300" height="260" alt="Davis Centre"></a>
+	</div>
+</div> <!-- mtg_details Div -->
+
+<br>
+<div id="mtg_gettingtowaterloo" class="mtg_border">
+	<a name="gettingtowaterloo"></a>
+    <h3><span id="mtg_gettotitle">Getting to UWaterloo</span></h3>
+      <p class="text">
+	Directions to UWaterloo may be obtained using <a href="https://www.google.ca/maps/dir//University+of+Waterloo,+200+University+Ave+W,+Waterloo,+ON+N2L+3G1/@43.4722893,-80.5470516,17z/data=!4m16!1m7!3m6!1s0x882bf6ad02edccff:0xdd9df23996268e17!2sUniversity+of+Waterloo!3b1!8m2!3d43.4722854!4d-80.5448576!4m7!1m0!1m5!1m1!1s0x882bf6ad02edccff:0xdd9df23996268e17!2m2!1d-80.5448576!2d43.4722854" class="mtg_gettolinks" target="_blank">Google Maps</a>.<br><br>
+	There is extensive road construction in the Kitchener/Waterloo region.  Click <a href="http://rowext1.regionofwaterloo.ca/RoadClosures/RoadClosure" target="_blank">here</a> for the road closure details in Kitchener, and <a href="http://app.kitchener.ca/road_closure/es_road_closure.asp" target="_blank">here</a> for the road closure details in Waterloo.<br>
+	</p>
+</div> <!-- mtg_gettingtouwaterloo Div -->
+
+<br>
+<div id="mtg_uwtransp" class="mtg_border">
+	<a name="trans"></a>
+	<h3>Transportation</h3>
+	
+	<div class="transport_grid">
+		<div class="transport-item air">
+		<strong>Air</strong><br>
+		<a href="http://www.waterlooairport.ca" target="_blank">Region of Waterloo International Airport</a><br>
+		&#160;<span class="mtg_smaller"> - <a href="http://www.waterlooairport.ca/en/passengerservices/groundtransportation.asp" target="_blank">ground transportation</a> to/from</span><br>
+		<a href="http://www.gtaa.com" target="_blank">Pearson International Airport</a><br>
+		&#160;<span class="mtg_smaller"> - <a href="https://torontopearson.com/en/toandfrom/ground/#" target="_blank">ground transportation</a> to/from</span><br>
+		</div>
+		
+		<div class="transport-item rental">
+		<div id='mtg_uwlist3'>
+		<strong>Rental</strong><br>
+		<a href="http://www.enterprise.com" target="_blank">Enterprise Rent&#45;A&#45;Car</a><br>
+		&#160;<span class="mtg_smaller">379 Weber Street North, Waterloo</span><br>
+		&#160;<span class="mtg_smaller">(519) 884-6001</span><br>
+		&#160;<span class="mtg_smaller">296 Victoria Street North, Kitchener</span><br>
+		&#160;<span class="mtg_smaller">(519) 772-0888</span><br>
+		<a href="http://www.hertz.ca" target="_blank">Hertz</a><br>
+		&#160;<span class="mtg_smaller">133 Weber Street North, Waterloo</span><br>
+		&#160;<span class="mtg_smaller">(519) 888-8296</span><br>
+		<a href="http://www.budget.com" target="_blank">Budget Car Rental</a><br>
+		&#160;<span class="mtg_smaller">160 Weber Street South, Waterloo</span><br>
+		&#160;<span class="mtg_smaller">(519) 749-7912</span><br>
+		&#160;<span class="mtg_smaller">696 Fairway Road South Unit 2, Kitchener</span><br>
+		&#160;<span class="mtg_smaller">(519) 893-6282</span><br>
+		</div>
+		</div>
+		
+		<div class="transport-item bus">
+		<div id='mtg_uwlist5'>
+		<strong>Bus</strong><br>
+		<a href="http://www.grt.ca" target="_blank">Grand River Transit</a><br>
+		<a href="http://www.gotransit.com/publicroot/en/default.aspx" target="_blank">GO Transit</a><br>
+		<br>
+		</div>
+		</div>
+		
+		<div class="transport-item taxi">
+		<div id='mtg_uwlist4'>
+		<strong>Taxi</strong><br>
+		<a href="http://www.waterlootaxi.ca/" target="_blank">Waterloo Taxi</a><br>
+		&#160;<span class="mtg_smaller">(519) 888-7777</span><br>
+		<a href="http://www.unitedtaxi.ca/" target="_blank">United Taxi</a><br>
+		&#160;<span class="mtg_smaller">(519) 888-9999</span><br>
+		<a href="http://www.citycabs.ca/" target="_blank"> City Cabs</a><br>
+		&#160;<span class="mtg_smaller">(519) 747-7777</span><br>
+		<a href="http://www.goldentriangletaxi.com/" target="_blank"> Golden Triangle Taxi</a><br>
+		&#160;<span class="mtg_smaller">(519) 740-2222</span><br>
+		<br>
+		</div>
+		</div>
+		
+		<div class="transport-item rail">
+		<div id='mtg_uwlist2'>
+		<strong>Rail</strong><br>
+		<a href="http://www.viarail.ca/" target="_blank">VIA Rail</a><br>
+		<br>
+		</div>
+		</div>
+	</div> <!-- mtg_uwtransp Div -->
+</div>
+
+<br>
+
+<div id="mtg_accommodate" class="mtg_border">
+	<a name="accommodations"></a>
+		<h3>Accommodations, Restaurants, and Attractions</h3>
+			<p class="text">
+				Please use TripAdvisor for information regarding <a href="https://www.tripadvisor.ca/Hotels-g154993-Region_of_Waterloo_Ontario-Hotels.html" target="_blank">accommodations</a>,
+				<a href="https://www.tripadvisor.ca/Restaurants-g154993-Region_of_Waterloo_Ontario.html" target="_blank">restaurants</a>,
+				and <a href="https://www.tripadvisor.ca/Attractions-g154993-Activities-Region_of_Waterloo_Ontario.html" target="_blank">local attractions</a> in the area.
+				Note that a group dinner will be held, location and time to be determined. 
+			</p>
+</div> <!-- mtg_accommodate Div -->
+
+<div id="mtg_uwparking" class="mtg_border">
+	<a name="parking"></a>
+		<h3>Parking</h3>
+			<p class="text">
+				Information regarding visitor parking, including a <a href="https://uwaterloo.ca/map/pdf/map_colour.pdf" target="_blank">campus map</a>, is provided by <a href="https://uwaterloo.ca/parking/visitors" target="_blank">UW Parking Services</a>.
+			</p>
+	</ul>
+</div> <!-- mtg_uwparking Div -->
+
+{% endblock %}

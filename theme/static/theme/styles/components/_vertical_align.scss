@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains all flexbox based vertical alignment styles
+// Vertical Align by Philip Walton http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+// -----------------------------------------------------------------------------
+
+/**
+ * Aligner
+ */
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Aligner Item
+ */
+.aligner__item {
+  max-width: auto;
+}
+
+/**
+ * Aligner Top
+ */
+.aligner__item--top {
+  align-self: flex-start;
+}
+
+/**
+ * Aligner Bottom
+ */
+.aligner__item--bottom {
+  align-self: flex-end;
+}

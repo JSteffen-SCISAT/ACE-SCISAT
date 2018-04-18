@@ -1,0 +1,29 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:index' %}">Instruments</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+	<h1>Instruments</h1>
+	<p class="text">
+		The two main instruments on the satellite are the <a href="{% url 'instruments:fts' %}">ACE-FTS</a> and <a href="{% url 'instruments:maestro' %}">MAESTRO</a>. 
+		The satellite bus, (made by Bristol Aerospace in Winnipeg ) the ACE-FTS, 
+		MAESTRO, and other components of the satellite can be seen in this section.
+	</p>
+	<p class="text">
+		Diagram of the <a href="{% static "instruments/SCISAT_Payload.jpg" %}" width="350" height="300" class="text_link single_image" title="SCISAT Satellite Bus">SCISAT satellite bus</a> with 
+		labelled components:
+	</p>
+	<img src="{% static "instruments/SCISAT_Payload.jpg" %}" width="768" height="481" align="center" title="SCISAT Satellite Bus">
+
+	<p class="noprint">
+		<span style="float:right"><a href="{% url 'instruments:fts' %}">Next: ACE-FTS >></a></span>
+	</p><br>
+{% endblock %}

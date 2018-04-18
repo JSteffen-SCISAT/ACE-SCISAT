@@ -1,0 +1,435 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'atlases:ace' %}">ace atlas</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block head_addon_bottom %}
+<link href="{% static "atlases/css/atlases.css" %}" rel="stylesheet" type="text/css">
+{% endblock head_addon_bottom %}
+
+{% block content %}
+  <div id="container">
+    <div id="contentcontainer">
+      <table class="main">
+        <tr>
+          <td valign="top">			</td>
+          <td valign="top">
+            <div id="content"><a name="top"></a>
+              <!-- ********************* Main Page Content *************************** -->
+              <div id='atl_title'><h1>ACE-FTS Atmospheric Atlases</h1></div>
+              <div id=atl_refs><p class='paper_ref'>Hughes, Ryan, Peter Bernath, Chris Boone (2014), <a href='ace_atlas/ACE-atm-atlases-2014.pdf'>ACE Infrared Spectral Atlases of the Earth&#8217;s Atmosphere</a>, <em>J. Quant. Spectrosc. Rad. Trans.</em> <strong>148</strong>, 18-21.<br></p></div>
+			  
+			  <br> 
+			  <div align='center'>
+              <div align='center' style='display: inline-block; border:1px solid red; padding: 10px 30px; margin: auto;'>
+			  <p><strong>Warning:</strong> If the text files are opened in MS Excel, they will be truncated because the number of lines exceed the number allowed</p>
+			  </div>
+			  </div>
+			  <br>
+			  
+              <div class='atl_regionbox'>
+                <table id='atl_atlastable'>
+                  <tr>
+                    <th colspan=2 class='atl_headerrow'>Mid-Latitude<br />Summer</th>
+                    <th colspan=2 class='atl_headerrow'>Mid-Latitude<br />Winter</th>
+                    <th colspan=2 class='atl_headerrow'>Arctic<br />Summer</th>
+                    <th colspan=2 class='atl_headerrow'>Arctic<br />Winter</th>
+                    <th colspan=2 class='atl_headerrow'>Tropics</th>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_004-008km.txt'>6 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_004-008km.txt'>6 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_004-008km.txt'>6 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_004-008km.txt'>6 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_004-008km.txt'>6 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_008-012km.txt'>10 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mls/MLS_10km.pdf'>PDF</a> (<span class='reducesize'>3 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_008-012km.txt'>10 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mlw/MLW_10km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_008-012km.txt'>10 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/as/AS_10km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_008-012km.txt'>10 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/aw/AW_10km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_008-012km.txt'>10 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'><a href='ace_atlas/tro/TRO_10km.pdf'>PDF</a> (<span class='reducesize'>3 MB</span>)</td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_012-016km.txt'>14 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_012-016km.txt'>14 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_012-016km.txt'>14 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_012-016km.txt'>14 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_012-016km.txt'>14 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_016-020km.txt'>18 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_016-020km.txt'>18 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_016-020km.txt'>18 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_016-020km.txt'>18 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_016-020km.txt'>18 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_020-024km.txt'>22 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_020-024km.txt'>22 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_020-024km.txt'>22 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_020-024km.txt'>22 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_020-024km.txt'>22 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_024-028km.txt'>26 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_024-028km.txt'>26 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_024-028km.txt'>26 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_024-028km.txt'>26 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_024-028km.txt'>26 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_028-032km.txt'>30 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mls/MLS_30km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_028-032km.txt'>30 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mlw/MLW_30km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_028-032km.txt'>30 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/as/AS_30km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_028-032km.txt'>30 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/aw/AW_30km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_028-032km.txt'>30 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'><a href='ace_atlas/tro/TRO_30km.pdf'>PDF</a> (<span class='reducesize'>4 MB</span>)</td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_032-036km.txt'>34 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_032-036km.txt'>34 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_032-036km.txt'>34 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_032-036km.txt'>34 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_032-036km.txt'>34 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_036-040km.txt'>38 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_036-040km.txt'>38 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_036-040km.txt'>38 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_036-040km.txt'>38 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_036-040km.txt'>38 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_040-044km.txt'>42 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_040-044km.txt'>42 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_040-044km.txt'>42 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_040-044km.txt'>42 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_040-044km.txt'>42 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_044-048km.txt'>46 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_044-048km.txt'>46 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_044-048km.txt'>46 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_044-048km.txt'>46 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_044-048km.txt'>46 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_048-052km.txt'>50 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_048-052km.txt'>50 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_048-052km.txt'>50 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_048-052km.txt'>50 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_048-052km.txt'>50 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_052-056km.txt'>54 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_052-056km.txt'>54 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_052-056km.txt'>54 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_052-056km.txt'>54 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_052-056km.txt'>54 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_056-060km.txt'>58 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_056-060km.txt'>58 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_056-060km.txt'>58 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_056-060km.txt'>58 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_056-060km.txt'>58 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_060-064km.txt'>62 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_060-064km.txt'>62 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_060-064km.txt'>62 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_060-064km.txt'>62 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_060-064km.txt'>62 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_064-068km.txt'>66 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_064-068km.txt'>66 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_064-068km.txt'>66 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_064-068km.txt'>66 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_064-068km.txt'>66 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_068-072km.txt'>70 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mls/MLS_70km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_068-072km.txt'>70 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mlw/MLW_70km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_068-072km.txt'>70 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/as/AS_70km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_068-072km.txt'>70 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/aw/AW_70km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_068-072km.txt'>70 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'><a href='ace_atlas/tro/TRO_70km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_072-076km.txt'>74 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_072-076km.txt'>74 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_072-076km.txt'>74 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_072-076km.txt'>74 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_072-076km.txt'>74 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_076-080km.txt'>78 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_076-080km.txt'>78 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_076-080km.txt'>78 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_076-080km.txt'>78 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_076-080km.txt'>78 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_080-084km.txt'>82 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_080-084km.txt'>82 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_080-084km.txt'>82 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_080-084km.txt'>82 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_080-084km.txt'>82 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_084-088km.txt'>86 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_084-088km.txt'>86 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_084-088km.txt'>86 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_084-088km.txt'>86 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_084-088km.txt'>86 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_088-092km.txt'>90 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_088-092km.txt'>90 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_088-092km.txt'>90 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_088-092km.txt'>90 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_088-092km.txt'>90 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_092-096km.txt'>94 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_092-096km.txt'>94 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_092-096km.txt'>94 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_092-096km.txt'>94 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_092-096km.txt'>94 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_096-100km.txt'>98 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_096-100km.txt'>98 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_096-100km.txt'>98 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_096-100km.txt'>98 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_096-100km.txt'>98 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_100-104km.txt'>102 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_100-104km.txt'>102 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_100-104km.txt'>102 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_100-104km.txt'>102 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_100-104km.txt'>102 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_104-108km.txt'>106 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_104-108km.txt'>106 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_104-108km.txt'>106 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_104-108km.txt'>106 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_104-108km.txt'>106 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_108-112km.txt'>110 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mls/MLS_110km.pdf'>PDF</a> (<span class='reducesize'>1 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_108-112km.txt'>110 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/mlw/MLW_110km.pdf'>PDF</a> (<span class='reducesize'>1 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_108-112km.txt'>110 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/as/AS_110km.pdf'>PDF</a> (<span class='reducesize'>1 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_108-112km.txt'>110 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td><a href='ace_atlas/aw/AW_110km.pdf'>PDF</a> (<span class='reducesize'>2 MB</span>)</td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_108-112km.txt'>110 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'><a href='ace_atlas/tro/TRO_110km.pdf'>PDF</a> (<span class='reducesize'>1 MB</span>)</td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_112-116km.txt'>114 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_112-116km.txt'>114 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_112-116km.txt'>114 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_112-116km.txt'>114 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_112-116km.txt'>114 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_116-120km.txt'>118 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_116-120km.txt'>118 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_116-120km.txt'>118 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_116-120km.txt'>118 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_116-120km.txt'>118 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row2'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_120-124km.txt'>122 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_120-124km.txt'>122 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_120-124km.txt'>122 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_120-124km.txt'>122 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_120-124km.txt'>122 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr class='atl_row1'>
+                    <td class='atl_leftcol'><a href='ace_atlas/mls/MidLatitudeSummer_124-128km.txt'>126 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/mlw/MidLatitudeWinter_124-128km.txt'>126 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/as/ArcticSummer_124-128km.txt'>126 km</a> (<span class='reducesize'>0MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/aw/ArcticWinter_124-128km.txt'>126 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td></td>
+                    <td class='atl_leftcol'><a href='ace_atlas/tro/Tropics_124-128km.txt'>126 km</a> (<span class='reducesize'>39 MB</span>)</td>
+                    <td class='atl_rightcol'></td>
+                  </tr>
+                  <tr>
+                    <td class='atl_botleftcol'><strong>MLS profile</strong></td>
+                    <td class='atl_bottop'><a href='ace_atlas/ace_atlas_midlatitudesummer.zip'>.ZIP</a> (<span class='reducesize'>276 MB</span>)</td>
+                    <td class='atl_botleftcol'><strong>MLW profile</strong></td>
+                    <td class='atl_bottop'><a href='ace_atlas/ace_atlas_midlatitudewinter.zip'>.ZIP</a> (<span class='reducesize'>277 MB</span>)</td>
+                    <td class='atl_botleftcol'><strong>AS profile</strong></td>
+                    <td class='atl_bottop'><a href='ace_atlas/ace_atlas_arcticsummer.zip'>.ZIP</a> (<span class='reducesize'>272 MB</span>)</td>
+                    <td class='atl_botleftcol'><strong>AW profile</strong></td>
+                    <td class='atl_bottop'><a href='ace_atlas/ace_atlas_arcticwinter.zip'>.ZIP</a>(<span class='reducesize'>274 MB</span>)</td>
+                    <td class='atl_botleftcol'><strong>TRO profile</strong></td>
+                    <td class='atl_rightcol atl_bottop'><a href='ace_atlas/ace_atlas_tropics.zip'>.ZIP</a> (<span class='reducesize'>270 MB</span>)</td>
+                  </tr>
+                </table>  <!-- atlastable -->
+              </div>  <!-- regionbox -->
+            </div>  <!-- content div -->
+          </td>
+        </tr>
+      </table>  <!-- table main -->
+    </div> <!-- contentcontainer div -->
+  </div>  <!-- container div -->
+{% endblock %}

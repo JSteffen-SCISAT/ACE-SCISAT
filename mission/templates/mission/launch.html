@@ -1,0 +1,42 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block head %}
+	{{ block.super }}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="?rss" />
+	<link rel="unapi-server" type="application/xml" title="unAPI" href="{% url 'home:index' %}"/> 
+{% endblock %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'mission:index' %}">Mission</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'mission:launch' %}">Launch</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+	<h1>Launch</h1>
+	<p>
+		The satellite was launched by NASA on August 12, 2003 using a 
+		Pegasus XL rocket developed by Orbital Sciences Corporation 
+		(<a href="http://www.ace.uwaterloo.ca/video/scisatlaunch081203.ram">see the video</a>).
+	</p>
+	<p>
+		At an altitude of 39,000 feet, the 3-stage Pegasus XL was dropped 
+		from by a L-1011 carrier aircraft that took of from Vandenberg Air 
+		Force Base in California. The stages of the launch are outlined in 
+		this <a href="{% static "mission/scisat-pegasus.jpg" %}" title="Launch & Separation System" class="single_image">sample launch and separation 
+		system</a> figure (courtesy of Orbital Science Corporation).
+	</p>
+
+	<br>
+	<div Align="center">
+	<img src="{% static "mission/FirstStageIgnition.png" %}" alt="First Stage" width="300" height="300">
+	<img src="{% static "mission/SecondStageIgnition.png" %}" alt="Second Stage" width="300" height="300">
+	<img src="{% static "mission/SatelliteInOrbit.png" %}" alt="Satellite in orbit" width="300" height="300">
+	<p class="figure_title" style="clear:left; text-align:center">(Figures courtesy of the Canadian Space Agency)</p> 
+	</div>
+	<br>
+{% endblock %}

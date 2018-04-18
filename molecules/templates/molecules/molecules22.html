@@ -1,0 +1,18 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'molecules:index' %}">Molecules</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'molecules:molecules22' %}">v2.2 MW List</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+		<h1 align='center'>Molecules v2.2 MW List</h1>
+		<div align = 'center'>
+			<a href="{% static "molecules/ACE-SOC-0020-microwindow_list_for_v2.2_and_updates_Dec1.pdf" %}" download> <h3>Download this PDF</h3></a>
+			<iframe width = "1000px" height = "800px" src="{% static "molecules/ACE-SOC-0020-microwindow_list_for_v2.2_and_updates_Dec1.pdf" %}" type=application/pdf <p><b>The 2.2 list is not available</b></p></iframe>
+		</div>
+{% endblock %}

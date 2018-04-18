@@ -1,0 +1,124 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:index' %}">Science</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:scienceresults' %}">Science Results</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<h1>Results</h1>
+		<p class="text">
+			The first release of ACE-FTS data was introduced 
+			in a special issue of the journal <em>Geophysical Research Letters</em> 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/Bernath-overview-reprint.pdf">Bernath et 
+			al., 2005</a>]. Version 1.0 of the ACE-FTS level 2 
+                        <a href="../sfmdata/scisatdata.html">data</a>
+			consists of the results for sunsets from February to October 2004, and 
+			was intended primarily for validation exercises 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/WalkerValidationComparisons.pdf">Walker et 
+			al., 2005</a>]. Validation of the data has involved comparisons to 
+			multiple other instruments [<a href="http://www.ace.uwaterloo.ca/publications/2005/FussenInitialIntercomparison.pdf">Fussen et 
+			al., 2005</a>; <a href="http://www.ace.uwaterloo.ca/publications/2005/Jin-COreprint.pdf">Jin et 
+			al., 2005</a>; <a href="http://www.ace.uwaterloo.ca/publications/2005/MahieuGB-FTSreprint.pdf">Mahieu et 
+			al., 2005</a>; <a href="http://www.ace.uwaterloo.ca/publications/2005/McHugh-HALOEreprint.pdf">McHugh et 
+			al., 2005</a>; and <a href="http://www.ace.uwaterloo.ca/publications/2005/PetelinaOSIRISrepint.pdf">Petelina et 
+			al., 2005</a>] but preliminary scientific studies based on these data 
+			have also been carried out.
+		</p>
+		<p class="text">
+			The range of scientific studies using this data, includes investigating the 
+			current levels of stratospheric water vapor [<a href="http://www.ace.uwaterloo.ca/publications/2005/NassarH2Oreprint.pdf">Nassar et 
+			al., 2005a</a>] and trends of many important halogenated molecules 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/RislandACE.pdf">Rinsland et al., 2005a</a>] 
+			through comparison with the previous ATMOS measurements. ACE-FTS measurements 
+			have been used to determine latitudinal distributions of CO 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/ClerbauxCO.pdf">Clerbaux et al., 2005</a>] and 
+			properties such as the phases, densities, and size distributions of 
+			high-altitude cloud and aerosol particles in the tropics 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/Eremenko-cirrus-reprint.pdf">Eremenko et al., 2005a</a>]. 
+			Some other studies include the detection of the first infrared spectra of 
+			polar mesospheric clouds (PMCs), which prove to be small ice particles as 
+			expected [<a href="http://www.ace.uwaterloo.ca/publications/2005/Eremenko-particles.pdf">Eremenko et al., 2005b</a>] 
+			and the first ever measurements of CFC-113 and HCFC-142b from space 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/DUFOUR-CFCreprint.pdf">Dufour et al, 2005</a>]. 
+			The data include measurements both inside and outside the strong Arctic 
+			vortex in 2004 [<a href="http://www.ace.uwaterloo.ca/publications/2005/NassarVortexReprint.pdf">Nassar et 
+			al., 2005b</a>] in which we observed a major enhancement of stratospheric 
+			NO and NO<sub>2</sub> levels in the vortex 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2005/RislandACEb.pdf">Rinsland et al., 2005b</a>]. The 
+			large NO<sub>x</sub> enhancements observed were compared 
+			with model simulations to assess the feasibility of their creation by 
+			aurorae or solar proton events [<a href="http://www.ace.uwaterloo.ca/publications/2005/SemeniukSPEreprint.pdf">Semeniuk et 
+			al., 2005</a>].
+		</p>
+		<p class="text">
+			In two papers, stratospheric chlorine 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2006/NassarStratoChlorine.pdf">Nassar et al., 2006a</a>] and stratospheric 
+			fluorine [<a href="http://www.ace.uwaterloo.ca/publications/2006/NassarStratoFlourine.pdf">Nassar et al., 2006b</a>] budgets have 
+			been found for the February 2004 to January 2005 time period.  The partitioning and evolution of 
+			chlorine-containing species in the Arctic polar vortex in winter-spring 2004/2005 was 
+			investigated using ACE-FTS HCl, ClONO<sub>2</sub> and ClO measurements 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2006/DufourClArctic2006reprint.pdf">Dufour et al., 2006</a>].  Satellite 
+			data including profiles from ACE-FTS and ACE-MAESTRO were used with a chemical transport model 
+			to quantify ozone loss in 2004/2005 Arctic winter 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2007/Singleton-QuantifyingArcticOzone.pdf">Singleton et al., 2007</a>].  ACE data 
+			has also been used in the 2006 World Meterological Organization's 
+			<a href=href="http://ozone.unep.org/Assessment_Panels/SAP/Scientific_Assessment_2006/">Ozone Report</a>.  
+		</p>
+		<p class="text">
+			A description of the ACE&#45;MAESTRO instrument has been published along with performance data and preliminary results
+			[<a href="http://www.ace.uwaterloo.ca/publications/2007/McElroy-MAESTROreprint2007.pdf">McElroy et al., 2007</a>]. Initial comparisons of 
+			ACE&#45;MAESTRO ozone and NO<sub>2</sub> to balloon and other satellite data has been done 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2007/Kar-O3-NO2reprint2007.pdf">Kar et al., 2007</a>], and further comparisons are underway as part
+			of the ACE Validation exercise.  An independent retrieval of temperature and pressure profiles from the ACE&#45;MAESTRO 
+			O<sub>2</sub> A&#45; and B&#45;bands has recently been demonstrated 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2007/Nowlan-pTMAESTROretrievals.pdf">Nowlan et al., 2007</a>].
+		</p>
+		<p class="text">
+			Measurements taken by the ACE-FTS have increased the number of chemical species retrieved from space: first measurements 
+			of upper tropospheric and lower stratospheric methanol profiles have been found within biomass burning plumes 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2006/DufourCH3OH2006ACPreprint.pdf">Dufour et al., 2006</a>].  Also, first tropospheric retrievals of 
+			C<sub>2</sub>H<sub>4</sub>, C<sub>3</sub>H<sub>6</sub>O, H<sub>2</sub>CO and PAN have been done by infrared 
+			occultation from space [<a href="http://www.ace.uwaterloo.ca/publications/2007/Coheur-acp-7-5437-2007.pdf">Coheur et al., 2007</a>].  Discovery of elevated 
+			mixing ratios from upper tropospheric CO, C<sub>2</sub>H<sub>6</sub>, HCN and C<sub>2</sub>H<sub>2</sub> have been found 
+			from biomass burning emissions and transport [<a href="http://www.ace.uwaterloo.ca/publications/2005/RinslandBiomass2005reprint.pdf">Rinsland et al., 2005</a>].
+		</p>
+		<p class="text">Global distributions have been determined for several chemical species based on ACE&#45;FTS data, namely carbonyl sulfide 
+			(OCS) [<a href="http://www.ace.uwaterloo.ca/publications/2008/Barkley-OCS-2008GL034270.pdf">Barkley et al., 2008</a>; <a href="publications/2008/Rinsland-OCS-2008.pdf">Rinsland et al., 2008</a>], 
+			carbon tetrachloride (CCl<sub>4</sub>) [<a href="http://www.ace.uwaterloo.ca/publications/2009/Allen-GlobalCCl4_ACPD.pdf">Allen et al., 2009</a>], 
+			formic acid (HCOOH) [<a href="http://www.ace.uwaterloo.ca/publications/2009/abad-GlobalFormicAcid_ACPD.pdf">Abad et al., 2009</a>], and carbonyl chlorofluoride (COClF) 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2009/Fu-FClCO-JQSRT2009.pdf">Fu et al., 2009</a>]. Also, seasonal cycles of upper tropospheric formaldehyde (HCHO) 
+			have been observed on a near&#45;global scale [<a href="http://www.ace.uwaterloo.ca/publications/2009/Dufour-UpperTropFormaldehyde.pdf">Dufour et al., 2009</a>].  A 
+			long&#45;term trend of CH<sub>4</sub> in the lower stratosphere has been estimated for the 1985&#45;2008 time period 
+			[<a href="http://www.ace.uwaterloo.ca/publications/2009/Rinsland-CH4trend2009.pdf">Rinsland et al., 2009</a>].  The tropical tape recorder effect has been observed in 
+			HCN using results from ACE&#45;FTS and MLS [<a href="http://www.ace.uwaterloo.ca/publications/2008/Pumphrey-HCNTapeRecorder.pdf">Pumphrey et al., 2008</a>].
+		</p>
+		<p class="text">Level 2 Version 2.2 + updates has been validated for all the baseline species of the ACE&#45;FTS.  Validated species include: 
+			O<sub>3</sub> [<a href="http://www.ace.uwaterloo.ca/publications/2009/Dupuy-O3Validation_ACP.pdf">Dupuy et al., 2009</a>]; 
+			H<sub>2</sub>O [<a href="http://www.ace.uwaterloo.ca/publications/2008/Carleer-H2OValidation.pdf">Carleer et al., 2008</a>]; 
+			CO [<a href="http://www.ace.uwaterloo.ca/publications/2008/Clerbaux-COValidation.pdf">Clerbaux et al., 2008</a>]; 
+			CH<sub>4</sub> [<a href="http://www.ace.uwaterloo.ca/publications/2008/DeMaziere-MethaneValidation.pdf">De Mazi&egrave;re et al., 2008</a>]; 
+			NO<sub>2</sub> &amp; NO [<a href="http://www.ace.uwaterloo.ca/publications/2008/Kerzenmacher-NOandNO2Validation_ACP.pdf">Kerzenmacher et al., 2008</a>]; 
+			HCl, HF, CCl<sub>3</sub>F &amp; CCl<sub>2</sub>F<sub>2</sub> [<a href="http://www.ace.uwaterloo.ca/publications/2008/Mahieu-FandClValidation_ACP.pdf">Mahieu et al., 2008</a>]; 
+			N<sub>2</sub>O [<a href="http://www.ace.uwaterloo.ca/publications/2008/Strong-N2OValidation.pdf">Strong et al., 2008</a>]; 
+			HNO<sub>3</sub>, ClONO<sub>2</sub> &amp; N<sub>2</sub>O<sub>5</sub> [<a href="http://www.ace.uwaterloo.ca/publications/2008/Wolff-HNO3-ClONO2-N2O5Validation_ACP.pdf">Wolff et al., 2008</a>]; 
+			temperature &amp; pressure [<a href="http://www.ace.uwaterloo.ca/publications/2008/Sica-pTValidation.pdf">Sica et al., 2008</a>]. Feasibility of a CO<sub>2</sub> retrieval 
+			from the ACE&#45;FTS spectra has been investigated [<a href="http://www.ace.uwaterloo.ca/publications/2009/Foucher-FeasibilityOfCO2.pdf">Foucher et al. 2009</a>].
+		</p>
+		<p class="text">
+			Development is underway for new versions of the Level 2 data for both ACE-FTS and ACE-MAESTRO and 
+			these will provide an even better picture of chemical abundances over the current versions. 
+			Investigations are being done to determine if stratospheric winds can be retrieved from the ACE-FTS 
+			data. Also, research is being done on temperature trends in the middle atmosphere and on 
+			pyroconvection and its effects on stratospheric ozone and temperature.
+		</p>
+		
+		<p class="noprint">
+			<span style="float:left"><a href="{% url 'science:dataanalysis' %}"><< Previous: Data Analysis</a></span>
+		</p><br>
+
+{% endblock %}

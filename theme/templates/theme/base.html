@@ -1,0 +1,338 @@
+<!doctype html>
+{% load staticfiles %}
+<html class="no-js {% block html_class %}{% endblock html_class %}" lang="en-CA">
+    <head>
+        {% block head %}
+		{% block fonts %}
+        <script type="text/javascript" src="https://fast.fonts.com/jsapi/9c101523-c9e9-4e52-b751-a5b16576f638.js"></script>
+        {% endblock fonts %}
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="ACE/SCISAT - The Atmospheric Chemistry Experiment">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static "/theme/img/favicon.ico" %}">
+        {% block default_styles %}
+        <link href="{% static "theme/css/main.css" %}" rel="stylesheet" type="text/css">
+        {% endblock default_styles %}
+        
+        {% endblock head %}
+        {% block head_addon_bottom %}{% endblock head_addon_bottom %}
+    </head>
+    <body class="site {% block body_class %}{% endblock body_class %}">
+        {% block header %}
+        <header class="grid {% block header_class %}{% endblock header_class %}">
+             {% block logo %}<a class="logo" href="{% url 'home:index' %}"><img id="logo" src="{% static "theme/img/banner_acescisat.png" %}"/></a>{% endblock logo %}
+             {% block banner_title %}
+             <div class="aligner">
+                <div class="aligner__item banner-title"><a href="{% url 'home:index' %}">The Atmospheric Chemistry Experiment</a></div>
+             </div>
+             {% endblock banner_title %}
+             <div class="grid__cell grid-cell--center align-right">
+                 <a class="off-canvas-nav" href="#off-canvas"><i class="fa fa-bars navicon"></i></a>
+                 <a class="off-canvas-nav" href="#"><i class="fa fa-times navicon"></i></a>
+             </div>
+        </header><!-- .end / HEADER -->
+        {% endblock header %}
+        {% block breadcrumb %}
+        <nav class="grid {% block bread_class %}{% endblock bread_class %}">
+            <div class="grid__cell grid-cell--center">
+                <ul class="breadcrumb">
+                  {% block breadcrumb__links %}
+                  {% endblock breadcrumb__links %}
+                </ul>
+            </div>
+        </nav><!-- .end / NAV -->
+        {% endblock breadcrumb %}
+        <main class="site-content styleguide {% block main_class %}{% endblock main_class %}">
+          {% block content %}
+          {% endblock content %}
+        </main><!-- .end / MAIN -->
+        {% block footer %}
+        <footer class="no-cl {% block footer_class %}{% endblock footer_class %}">
+          <div class="grid grid--full grid--gutters large-grid--fit">
+              <div class="grid__cell">
+                  <ul class="contact">
+                    <li><p class="footer__list-title">Contact Us:</p></li>
+					<li><a href="mailto:info@scisat.ca"><i class="fa fa-envelope-square"></i></a><li>
+					<li><a href="https://twitter.com/scisat"><i class="fa fa-twitter-square"></i></a></li>
+                  </ul>
+              </div>
+              <div class="grid__cell">
+              </div>
+          </div>
+        </footer><!-- .end / FOOTER -->
+        <div class="off-canvas" id="off-canvas">
+		  <ul>
+		    <li class="open-nav">
+            <a class="off-canvas-toggle" href="#off-canvas">
+			<i class="fa fa-bars navicon" style="pointer-events: none;"></i>
+			<span class='nav-text'> </span>
+			</a>
+			</li>
+			
+			<li class="close-nav">
+            <a class="off-canvas-toggle" href="#">
+			<i class="fa fa-times navicon" style="pointer-events: none;"></i>
+			<span class='nav-text' style='left: 13px;'>Close Navigation</span>
+			</a>
+			</li>
+			
+			<div class='nav-category'>
+			<li>
+			<a class='nav-link' href="{% url 'home:index' %}">
+			<i class="fa fa-home"></i>
+			<span class='nav-text'>Home</span>
+			</a>
+			<ul class='sub-menu'>
+				<li>
+				<a class='nav-link' href="{% url 'home:acknowledgment' %}">
+				<span class='nav-text'>Acknowledgment</span>
+				</a>
+				</li>
+				</ul>
+			</li>
+			</div>
+			
+			<div class='nav-category'>
+				<li>
+				<a class='nav-link' href="{% url 'mission:index' %}">
+				<i class="fa fa-rocket"></i>
+				<span class='nav-text'>Mission</span>
+				</a>
+				<ul class='sub-menu'>
+					<li>
+					<a class='nav-link' href="{% url 'mission:launch' %}">
+					<span class='nav-text'>Launch</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'mission:orbit' %}">
+					<span class='nav-text'>Orbit</span>
+					</a>
+					</li>
+				</ul>
+				</li>
+			</div>
+			
+			<div class='nav-category'>
+			<li>
+			<a class='nav-link' href="{% url 'science:index' %}">
+			<i class="fa fa-flask"></i>
+			<span class='nav-text'>Science</span>
+			</a>
+			</li>
+			<ul class='sub-menu'>
+				<li>
+				<a class='nav-link' href="{% url 'science:ozonedecline' %}">
+				<span class='nav-text'>Ozone Decline</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'science:climatechange' %}">
+				<span class='nav-text'>Climate Change</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'science:ozonemonitoring' %}">
+				<span class='nav-text'>Ozone Monitoring</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'science:dataanalysis' %}">
+				<span class='nav-text'>Data Analysis</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'science:scienceresults' %}">
+				<span class='nav-text'>Science Results</span>
+				</a>
+				</li>
+			</ul>
+			</div>
+			
+			
+			<div class='nav-category'>
+				<li>
+				<a class='nav-link' href="{% url 'instruments:index' %}">
+				<i class="fa fa-cog"></i>
+				<span class='nav-text'>Instruments</span>
+				</a>
+				<ul class='sub-menu'>
+					<li>
+					<a class='nav-link' href="{% url 'instruments:fts' %}">
+					<span class='nav-text'>ACE-FTS</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'instruments:maestro' %}">
+					<span class='nav-text'>MAESTRO</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'instruments:testing' %}">
+					<span class='nav-text'>Testing</span>
+					</a>
+					</li>
+				</ul>
+				</li>
+			</div>
+			
+			<div class='nav-category'>
+			<li>
+			<a class='nav-link' href="{% url 'molecules:index' %}">
+			<i class="nav-text-icon">O<sub>3</sub></i>
+			<span class='nav-text' style='position: relative; top:-2px;'>Molecules</span>
+			</a>
+			<ul class='sub-menu'>
+					<li>
+					<a class='nav-link' href="{% url 'molecules:molecules22' %}">
+					<span class='nav-text'>V2.2 MW List</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'molecules:molecules30' %}">
+					<span class='nav-text'>V3.0 MW list</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'molecules:molecules35' %}">
+					<span class='nav-text'>V3.5 MW list</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'molecules:validation_O3' %}">
+					<span class='nav-text'>O<sub>3</sub> Validation</span>
+					</a>
+					</li>
+				</ul>
+			</li>
+			</div>
+
+			
+			<li>
+			<a class='nav-link' href="{% url 'publications:index' %}">
+			<i class="fa fa-file-powerpoint-o"></i>
+			<span class='nav-text'>Publications</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="{% url 'home:index' %}">
+			<i class="fa fa-picture-o"></i>
+			<span class='nav-text'>Gallery</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="https://databace.scisat.ca/">
+			<i class="fa fa-folder-o"></i>
+			<span class='nav-text'>Data</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="{% url 'scenario:index' %}">
+			<i class="fa fa-globe"></i>
+			<span class='nav-text'>Scenario</span>
+			</a>
+			</li>
+			
+			<div class='nav-category'>
+				<li>
+				<a class='nav-link' href="{% url 'atlases:ace' %}">
+				<i class="fa fa-book"></i>
+				<span class='nav-text'>Atlases</span>
+				</a>
+				<ul class='sub-menu'>
+					<li>
+					<a class='nav-link' href="{% url 'atlases:ace' %}">
+					<span class='nav-text'>ACE Atlas</span>
+					</a>
+					</li>
+					
+					<li>
+					<a class='nav-link' href="{% url 'atlases:solar' %}">
+					<span class='nav-text'>Solar Atlas</span>
+					</a>
+					</li>
+				</ul>
+				</li>
+			</div>
+			
+			<div class='nav-category'>
+			<li>
+			<a class='nav-link' href="{% url 'climatology:index' %}">
+			<i class="fa fa-cloud"></i>
+			<span class='nav-text'>Climatology</span>
+			</a>
+			<ul class='sub-menu'>
+				<li>
+				<a class='nav-link' href="{% url 'climatology:climatology35' %}">
+				<span class='nav-text'>Climatology V3.5</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'climatology:climatology22' %}">
+				<span class='nav-text'>Climatology V2.2</span>
+				</a>
+				</li>
+				
+				<li>
+				<a class='nav-link' href="{% url 'climatology:climatology22NOy' %}">
+				<span class='nav-text'>Climatology V2.2NOy</span>
+				</a>
+				</li>
+			</ul>
+			</li>
+			
+			
+			</div>
+			<li>
+			<a class='nav-link' href="http://bernath.uwaterloo.ca/molecularlists.php">
+			<i class="fa fa-list"></i>
+			<span class='nav-text'>Mollist</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="{% url 'home:index' %}">
+			<i class="fa fa-area-chart"></i>
+			<span class='nav-text'>Daily Plots</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="{% url 'meeting:index' %}">
+			<i class="fa fa-users"></i>
+			<span class='nav-text'>ACE Meeting</span>
+			</a>
+			</li>
+			
+			<li>
+			<a class='nav-link' href="{% url 'montreal:index' %}">
+			<img class='maple-leaf' src="{% static "theme/img/maple-leaf3.png" %}">
+			<span class='nav-text' style='position: relative; top:-10px; left: 15px;'>Montreal Protocol</span>
+			</a>
+			</li>
+		  </ul>
+        </div>
+        {% endblock footer %}
+        {% block footer_js %}
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="{% static "theme/js/min/scripts.js" %}"></script>
+        {% endblock footer_js %}
+        {% block footer_addon_js %}{% endblock footer_addon_js %}
+    </body><!-- .end / BODY -->
+</html>

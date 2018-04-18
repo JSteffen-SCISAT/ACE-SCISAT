@@ -1,0 +1,96 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+
+<title>{% block title %}ACE/SCISAT - The Atmospheric Chemistry Experiment{% endblock title %}</title>
+
+{% block head_addon_bottom %}
+<script src="{% static "Scenario/Build/Cesium/Cesium.js" %}"></script>
+<style>
+@import url({% static "Scenario/Build/Cesium/Widgets/widgets.css" %});
+#cesiumContainer {
+width: 100%; 
+height: 100%; 
+margin: 0; 
+padding: 0;
+border: 0px solid black;
+overflow: hidden;
+</style>
+{% endblock head_addon_bottom %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<h2 style="text-align: center; padding-bottom: 10px;">Welcome to the homepage for the Atmospheric Chemistry Experiment</h2>
+<div class="container-home">
+    <div class="grid__cell">
+		<!--<img class="testlogo" src="{% static "theme/img/ScisatLogo.png" %}" alt="SCISATlogo"">-->
+        <p> The Atmospheric Chemistry Experiment (ACE) is a satellite mission on board the Canadian satellite SCISAT, that takes measurements of the Earth's atmosphere. </p> 
+		<p> The measurements consist of spectra and images that are used to investigate chemical and dynamical processes in our atmosphere, with a particular emphasis on ozone depletion in the Arctic stratosphere. </p>
+		<p>Dr. Peter Bernath from the Department of Chemistry at the University of Waterloo is the Mission Scientist, which involves the collaboration of members from several universities, industries and other organizations in Canada and around the world.</p>
+    </div>
+	<div id="cesiumContainer" class="grid__cell" style="border:2px solid grey;">
+		<script>
+		//update bing maps key
+		Cesium.BingMapsApi.defaultKey = 'fWDgSzttTLCbHpbQeLpm~W5ZFSEAonrWmUztoNDYgfw~ApalPOynk04hBOe_vHhA5ojCRE42tXmr9RpqjXUztU_Qj32Fk2mzDqpIczorn8FO';
+		
+		// code to create viewer, set scene and try and optimize frame rate
+		var viewer = new Cesium.Viewer('cesiumContainer', {
+			//sceneMode: Cesium.SceneMode.SCENE2D
+			fxaa: false,
+			timeline: false,
+			imageryProvider: new Cesium.BingMapsImageryProvider({
+				url : 'https://dev.virtualearth.net',
+				mapStyle : Cesium.BingMapsStyle.AERIAL_WITH_LABELS
+			}),
+			baseLayerPicker : false,
+			fullscreenButton : false,
+			homeButton : false,		
+		});
+		
+		//Configures various viewer settings
+		//viewer.scene.debugShowFramesPerSecond = true;
+		viewer.resolutionScale = 1.0 / devicePixelRatio;
+		//viewer.fullscreenButton = false;
+		viewer.navigationInstructionsInitiallyVisible = false;
+		//viewer.timeline = false;
+		viewer.scene.fxaa = false;
+		
+		// code to import current czml file
+		var czmlSource = new Cesium.CzmlDataSource();
+		var czmlFile = "{% static "Scenario/scisatLive.czml" %}";
+		czmlSource.load(czmlFile);
+		viewer.dataSources.add(czmlSource);
+		
+		// code to follow scisat, after CZML load promise is finished
+		czmlSource.load(czmlFile).then(function(){
+			//clearLoader();
+			var scisat1 = czmlSource.entities.getById("Satellite/Scisat1");
+			var camera = viewer.camera;
+			
+			
+			// Updates time to be real time
+			var clock = viewer.clock;
+			clock.clockStep = Cesium.ClockStep.SYSTEM_CLOCK;
+			var curTime = clock.currentTime;
+
+			// Tracks satellite with a defined camera angle to start
+			var s1Position = scisat1.position.getValue(curTime);
+			var cameraPosition = s1Position;
+			//var cameraOffset = s1Position;
+			//console.log(cameraOffset)
+			//cameraOffset.z = cameraOffset.z - 100;
+			//scisat1.viewFrom = cameraOffset;
+			scisat1.viewFrom = Cesium.Cartesian3.fromElements(-4.0,2.50,7.00) //Spherical coordinates for (45,-45)
+			//scisat1.viewFrom = Cesium.Cartesian3.fromDegrees(-45,45,10);
+			//console.log(scisat1.viewFrom);
+			//console.log(cameraOffset);
+			viewer.trackedEntity = scisat1;
+			//console.log(cameraOffset);
+			//console.log(s1Position);
+		});
+		</script>
+	</div>
+</div>
+{% endblock content %}

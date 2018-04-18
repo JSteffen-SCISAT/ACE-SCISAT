@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// Contains all styles for the Styleguide Theme
+// -----------------------------------------------------------------------------
+
+/**
+ *  Styleguide
+ */
+.styleguide {
+    .example {
+        width: 100%;
+        padding: .8em 1em 0;
+        background: rgba(147,128,108,.1);
+        border-radius: 3px;
+    }
+    h2 {
+        color: $ace-red;
+        &.for-styleguide {
+            color: inherit;
+        }
+    }
+    
+}
+
+/**
+ *  Example Div
+ */
+.example::after {
+    content: '\00a0';
+    display: block;
+    margin-top: 1em;
+    height: 0;
+    visibility: hidden;
+}

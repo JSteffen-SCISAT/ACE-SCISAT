@@ -1,0 +1,45 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:index' %}">Science</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:dataanalysis' %}">Data Analysis</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+		<h1>Data Analysis</h1>
+		<p class="text">
+			The raw SCISAT data is downlinked to ground stations in Saskatoon, St. Hubert, 
+			Alaska and Kiruna. The data volume, which at times can exceed 3 Gb per 
+			day, is transferred to the Mission Operations Centre operated by 
+			Canadian Space Agency in St. Hubert (near Montreal) then sent to the 
+			Science Operations Centre at the University of Waterloo. At Waterloo 
+			the data is archived and processed to obtain 
+                        <a href="../sfmdata/scisatdata.html"> data products</a> 
+			for distribution to the science team members.
+		</p>
+		<p class="text">
+			Atmospheric temperature profiles are determined as a function of pressure 
+			by starting with a priori data from an upper atmospheric model combined with 
+			meteorological data from the Canadian Meteorological Centre for improved 
+			accuracy in the troposphere and lower stratosphere. An empirically determined 
+			CO<sub>2</sub> volume mixing ratio is used for the ACE-FTS 
+			and O<sub>2</sub> A-, B- and Gamma-bands for MAESTRO. Both ACE-FTS and MAESTRO 
+			<a href="http://databace.scisat.ca/occultation_tool.php">solar occultation</a>
+			measurements are converted to height profiles of atmospheric species. The 
+			ACE-FTS algorithm for retrieval of atmospheric profiles has some similarities 
+			to the ATMOS algorithms but applies a more sophisticated global fit approach, 
+			developed by and described in detail by 
+			<a href="http://www.ace.uwaterloo.ca/publications/2005/Boone-retrievals2005reprint.pdf">Boone et al. [2005]</a>. The 
+			MAESTRO algorithms draw on previous work by McElroy and co-workers with a 
+			variety of UV/visible spectrographs that have been deployed.
+		</p>
+		<p class="noprint">
+			<span style="float:left"><a href="{% url 'science:ozonemonitoring' %}"><< Previous: Ozone Monitoring</a></span>
+			<span style="float:right"><a href="{% url 'science:scienceresults' %}">Next: Science Results >></a></span>
+		</p><br>
+
+{% endblock %}

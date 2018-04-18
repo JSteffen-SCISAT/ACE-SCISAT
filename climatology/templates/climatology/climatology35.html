@@ -1,0 +1,112 @@
+{% extends "theme/base.html" %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:index' %}">Climatology</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:climatology35' %}">Version 3.5</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+
+    {% load staticfiles %}
+    {% load static %}
+
+    <h1>Climatology</h1>
+    <div id="clm_title">
+        <h1>ACE-FTS Climatology - Version 3.5</h1>
+    </div>
+    
+    <div id="clm_main">
+	<h2>Description:</h2>
+	<p class="text">ACE-FTS version 3.5 (February 2004 to February 2013) was used to create a quality-controlled 
+                        climatology for the following 21 species: C<sub>2</sub>H<sub>2</sub>, C<sub>2</sub>H<sub>6</sub>, 
+                        CCl<sub>2</sub>F<sub>2</sub>, CCl<sub>3</sub>F, CH<sub>3</sub>OH, CH<sub>4</sub>, 
+                        ClONO<sub>2</sub>, CO, H<sub>2</sub>CO, H<sub>2</sub>O, HCl, HCN, HCOOH, HF, HNO<sub>3</sub>, 
+                        N<sub>2</sub>O, N<sub>2</sub>O<sub>5</sub>, NO, NO<sub>2</sub>, O<sub>3</sub>, and OCS. A 
+                        climatology for temperature was also created.
+        </p>
+        <p class="text">The climatological fields are provided on a one- and three-month basis (DJF, MAM, JJA, SON), at 
+                        5 degree latitude and equivalent latitude spacing, and on 43 pressure surfaces. Please consult 
+                        the associated reference and the data set 'ReadMe' file for further information.
+        </p>
+        <hr>
+        <h2>Reference:</h2>
+        <p class="paper_ref">Koo, Ja-Ho, Walker, Kaley A., Jones, Ashely, Sheese, Patrick E., Boone, 
+                     Chris D., Bernath, Peter F., Manney, Gloria L. (2017), 
+        <a href="publications/2017/1-s2.0-S0022407316301066-main.pdf">Global climatology based on 
+                 the ACE-FTS version 3.5 data set: Addition of mesospheric levels and carbon-containing 
+                 species in the UTLS</a>, 
+                 <i>Journal of Quantitative Spectroscopy and Radiative Transfer</i>, 
+                 <b>12</b>, 52-62, doi:10.1016/j.jqsrt.2016.07.003 (PDF)<br>
+        </p>
+	<hr>
+	<h2>Data set:</h2>
+	<h3>ReadMe Files:</h3>
+	<p class="text"><a href="{% static "climatology/docs/ACE_Climatology_Readme_NETCDF_2012-05-04.txt" %}">netCDF ReadMe</a>
+	</p>
+        <h3>Data Files by Molecule and Format:</h3>
+        <table id="mol_table" cellpadding="5">
+            <TR><TD class='molcol'>C2H2</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/C2H2'>netCDF</A></TD>
+            <TR><TD class='molcol'>C2H6</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/C2H6'>netCDF</A></TD>
+            <TR><TD class='molcol'>CCl2F2</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/CCl2F2'>netCDF</A></TD>
+            <TR><TD class='molcol'>CCl3F</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/CCl3F'>netCDF</A></TD>
+            <TR><TD class='molcol'>CH3OH</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/CH3OH'>netCDF</A></TD>
+            <TR><TD class='molcol'>CH4</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/CH4'>netCDF</A></TD>
+            <TR><TD class='molcol'>ClONO2</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/ClONO2'>netCDF</A></TD>
+            <TR><TD class='molcol'>CO</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/CO'>netCDF</A></TD>
+            <TR><TD class='molcol'>H2CO</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/H2CO'>netCDF</A></TD>
+            <TR><TD class='molcol'>H2O</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/H2O'>netCDF</A></TD>
+            <TR><TD class='molcol'>HCl</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/HCl'>netCDF</A></TD>
+            <TR><TD class='molcol'>HCN</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/HCN'>netCDF</A></TD>
+            <TR><TD class='molcol'>HCOOH</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/HCOOH'>netCDF</A></TD>
+            <TR><TD class='molcol'>HF</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/HF'>netCDF</A></TD>
+            <TR><TD class='molcol'>HNO3</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/HNO3'>netCDF</A></TD>
+            <TR><TD class='molcol'>N2O</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/N2O'>netCDF</A></TD>
+            <TR><TD class='molcol'>N2O5</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/N2O5'>netCDF</A></TD>
+            <TR><TD class='molcol'>NO</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/NO'>netCDF</A></TD>
+            <TR><TD class='molcol'>NO2</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/NO2'>netCDF</A></TD>
+            <TR><TD class='molcol'>O3</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/O3'>netCDF</A></TD>
+            <TR><TD class='molcol'>OCS</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/OCS'>netCDF</A></TD>
+            <TR><TD class='molcol'>T</TD>
+            <TD id='mol_table'><A HREF='climatology/3.5/netcdf/T'>netCDF</A></TD>
+        </table>
+        <h3>Zip Files Containing All Molecules and ReadMe Files:</h3>
+        <p class="text"><a href="climatology/3.5/netcdf.tar.gz">netCDF Zip</a>
+        </p>
+	<hr>
+    </div>
+    <div id="clm_how">
+        <h2>How to Cite:</h2>
+        <p class="text">In any publications using ACE data, such as this climatology, it is important to acknowledge the
+                    Canadian Space Agency for the funding of the SCISAT satellite. Any text that recognizes the Canadian 
+                    Space Agency as funding the ACE Mission is permitted, but we have provided a sample to use that meets 
+                    this requirement. This simple statement has been used in many publications with ACE data.</p>
+        <P class="text"><U>Sample ACE Acknowledgement:</U></P>
+        <p class="text">The Atmospheric Chemistry Experiment (ACE), also known as SCISAT, is a Canadian-led mission mainly 
+                    supported by the Canadian Space Agency (CSA).
+        </p>
+    </div>
+{% endblock %}

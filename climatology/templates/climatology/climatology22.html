@@ -1,0 +1,108 @@
+{% extends "theme/base.html" %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:index' %}">Climatology</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:climatology22' %}">Version 2.2</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+
+	{% load staticfiles %}
+	{% load static %}
+	
+    <div id="clm_title">
+	<h1>ACE-FTS Climatology - Version 2.2</h1>
+    </div>
+
+    <div id="clm_main">
+	<h2>Description:</h2>
+	<p class="text">ACE-FTS version 2.2 (February 2004 to February 2009; including updates for 0<sub>3</sub> and 
+                        N<sub>2</sub>O<sub>5</sub>) was used to create a quality-controlled climatology for the following 
+                        14 baseline species: O<sub>3</sub>, H<sub>2</sub>O, CH<sub>4</sub>, N<sub>2</sub>O, CO, NO, 
+                        NO<sub>2</sub>, N<sub>2</sub>O<sub>5</sub>, HNO<sub>3</sub>, HCl, ClONO<sub>2</sub>, 
+                        CCl<sub>3</sub>F, CCl<sub>2</sub>F<sub>2</sub>, and HF. Validation of the baseline species was 
+                        published in the 
+                        <a href="http://www.ace.uwaterloo.ca/publications.html#ValidationPapers">ACE Validation Special Issue</a> of 
+                        <a href="http://www.atmos-chem-phys.org/special_issue114.html">ACP</a>.
+	</p>
+	<p class="text">The climatological fields are provided on a one- and three-month basis (DJF, MAM, JJA, SON), at 5 
+                        degree latitude and equivalent latitude spacing, and on 28 pressure surfaces.  Please consult the 
+                        associated reference and the data set 'ReadMe' files for further information.
+	</p>
+	<hr>
+        <h2>Reference:</h2>
+        <p class="paper_ref">Jones, A.,  K.A. Walker, J.J. Jin, J.R. Taylor, C.D. Boone, P.F. Bernath, S. 
+                           Brohede, G.L. Manney, S. McLeod, R. Hughes, and W.H. Daffer (2012),
+                           <a href="publications/2012/Jones-TraceGasClimatology.pdf">Technical Note: A trace gas 
+                           climatology derived from the Atmospheric Chemistry Experiment Fourier Transform Spectrometer 
+                           data set</a>, <i>Atmos. Chem. Phys.</i>, <b>12</b>, 5207-5220, doi:10.5194/acp-12-5207-2012 (PDF)<br>
+        </p>
+	<hr>
+	<h2>Data set:</h2>
+	<h3>ReadMe Files:</h3>
+	<p class="text"><a href="{% static "climatology/docs/ACE_Climatology_Readme_ASCII_2012-05-04.txt" %}">ASCII ReadMe</a></p>
+	<p class="text"><a href="{% static "climatology/docs/ACE_Climatology_Readme_NETCDF_2012-05-04.txt" %}">netCDF ReadMe</a></p>
+	<h3>Data Files by Molecule and Format:</h3>
+	<table id="mol_table" cellpadding="5">
+            <TR><TD class='molcol'>CFC-11</TD>
+            <TD id='mol_table'><A HREF="{% static 'climatology/2.2/ascii/CFC-11' %}">ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/CFC-11'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>CFC-12</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/CFC-12'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/CFC-12'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>CH4</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/CH4'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/CH4'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>ClONO2</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/ClONO2'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/ClONO2'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>CO</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/CO'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/CO'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>H2O</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/H2O'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/H2O'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>HCl</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/HCl'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/HCl'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>HF</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/HF'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/HF'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>HNO3</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/HNO3'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/HNO3'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>N2O</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/N2O'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/N2O'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>NO</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/NO'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/NO'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>NO2</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/NO2'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/NO2'>netCDF</A></TD></TR>
+            <TR><TD class='molcol'>O3</TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/ascii/O3'>ASCII</A></TD>
+            <TD id='mol_table'><A HREF='climatology/2.2/netcdf/O3'>netCDF</A></TD></TR>
+        </table>
+        <h3>Zip Files Containing All Molecules and ReadMe Files:</h3>
+        <p class="text"><a href="climatology/2.2/ascii.tar.gz">ASCII Zip</a>
+	</p>
+	<p class="text"><a href="climatology/2.2/netcdf.tar.gz">netCDF Zip</a>
+        </p>
+	<hr>
+    </div>
+    <div id="clm_how">
+	<h2>How to Cite:</h2>
+	<p class="text"> In any publications using ACE data, such as this climatology, it is important to acknowledge the 
+                         Canadian Space Agency for the funding of the SCISAT satellite. Any text that recognizes the Canadian 
+                         Space Agency as funding the ACE Mission is permitted, but we have provided a sample to use that meets 
+                         this requirement. This simple statement has been used in many publications with ACE data.</p>
+	<P class="text"><U>Sample ACE Acknowledgement:</U></P>
+	<p class="text">The Atmospheric Chemistry Experiment (ACE), also known as SCISAT, is a Canadian-led mission mainly 
+                        supported by the Canadian Space Agency (CSA).  
+        </p>
+    </div>
+{% endblock %}

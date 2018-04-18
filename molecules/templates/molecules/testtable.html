@@ -1,0 +1,62 @@
+{% extends "theme/base.html" %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'molecules:index' %}">Molecules</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'molecules:testtable' %}">test table</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<div id='tt_titlebox'>
+   <h1>ACE-FTS table</h1>
+</div>
+<div class='mol_legend'>
+	<span class='tab_legtitle'>Legend:</span> A &#45; Z
+<!--  border-collapse does not seem to do anything
+<table class='my_table' border='2' border-collapse="collapse">
+-->
+<table class='my_table' border='2' >
+   <style>
+       table, th, td {border: 1px solid blue; text-align: center}
+   </style>
+   <caption><sup><span id='dagger'>&#8224;</span></sup> indicates knowledge
+   <tr class='toprow'>
+      <th>Molecule h</th>
+      <th>Altitude (km) h</th>
+      <th></th>
+      <th>Publications h</th>
+   </tr>
+   <tr class='toprow'>
+      <td rowspan=2 border=2>Molecule</td>
+      <td colspan=2>Altitude (km)</td>
+      <td rowspan=2>Publications</td>
+   </tr>
+   <tr class='toprow'>
+      <td>V2.2 + updates</td>
+      <td>V3.0/V3.5</td>
+   </tr>
+   <tr>
+      <td class='molcol'>O<sub>3</sub></td>
+      <td class='altcol'>5 - 95</td>
+      <td class='altcol'>5 - 95</td>
+      <td class='refcol'>
+         <a class='mol_toggleval'>Validation papers of O<sub>3</sub></a>
+         <br>
+         <a class='mol_toggleother'>Publications with O<sub>3</sub></a>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=4 class='mol_papersrow'><span class='mol_vallist'>
+         <h3>Validation papers of O<sub>3</sub></h3>
+         <p class='paper_ref'>Waymark, C., 
+            <a class='pub_coauth noprint'>&lt;co-authors list&gt;</a> 
+            <span class='js_nodisplay'>K.A. Walker, C.D. Boone, P.F. Bernath</span> (2013), 
+            <a href='http://www.ace.uwaterloo.ca/publications/2013/6339-13347-1-PB.pdf' class='paper_ref_link'>ACE-FTS version 3.0 data set: validation and data processing update</a>, <em>Ann. Geophys.</em> <strong>56</strong>, Fast Track-1.
+         </p>
+      </td>
+   </tr>
+   <tr><td>this is information</td><td>more info</td><td>Still more</td><td>the last info</td></tr>
+</table>
+{% endblock %}

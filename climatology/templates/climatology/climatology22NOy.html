@@ -1,0 +1,70 @@
+{% extends "theme/base.html" %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:index' %}">Climatology</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:climatology22NOy' %}">Version 2.2 NOy</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+
+{% load staticfiles %}
+{% load static %}
+
+	<div id="clm_datatitle">
+	    <h1>ACE-FTS NO<sub>y</sub> Climatology - Version 2.2</h1>
+	</div> <!-- clm_datatitle -->
+	
+	<div id="noy_clm_main">
+	    <h2>Description:</h2>
+	    <p class="text">A combined NO<sub>y</sub> climatology was prepared using the version 2.2 NO, NO<sub>2</sub>, 
+			    N<sub>2</sub>O<sub>5</sub>, ClONO<sub>2</sub>, HNO<sub>3</sub>, and HNO<sub>4</sub> (research 
+			    product) results.
+	    </p>
+	    <p class="text">The climatological fields are provided on a one- and three-month basis (DJF, MAM, JJA, SON), at 5 
+			    degree latitude spacing, and on 33 pressure surfaces. Please consult the associated reference 
+			    and the data set 'ReadMe' files for further information.
+	    </p>
+	    <hr>
+	    <h2>Reference:</h2>
+	    <p class="paper_ref">Jones, A., G. Qin, K. Strong, Kaley A. Walker, C.A. McLinden, M. Toohey, T. 
+			     Kerzenmacher, P. F. Bernath and C.D. Boone (2011), 
+			     <a href="publications/2011/Jones-NOyClimatology.pdf" class="paper_ref_link">A global 
+			     inventory of stratospheric NO<sub>y</sub> from ACE&#45;FTS</a>, <i>J. Geophys. Res.</i>, 
+			     <b>116</b>, D17304, doi:10.1029/2010JD015465 (PDF)<br>
+	    </p>
+	    <hr>
+	    <h2>Data Set:</h2>
+	    <h3>ReadMe Files:</h3>
+    	<p class="text"><a href="{% static "climatology/docs/ACE_Climatology_Readme_ASCII_2012-05-04.txt" %}">ASCII ReadMe</a></p>
+	    <p class="text"><a href="{% static "climatology/docs/ACE_Climatology_Readme_NETCDF_2012-05-04.txt" %}">netCDF ReadMe</a></p>
+	    <h3>Data Files by Format:</h3>
+	    <table id="noy_table" cellpadding="5">
+		<tr>
+		<td class="noycol">NO<sub>y</sub></td>
+		<td id="noy_table"><a href='climatology/2.2/NOy/ascii'>ASCII</a></td>
+		<td id="noy_table"><a href='climatology/2.2/NOy/netcdf'>netCDF</a></TD>
+		</tr>
+	    </table>
+	    <h3>Zip Files Containing All Data Files and ReadMe Files:</h3>
+	    <p class="text"><a href="climatology/2.2/NOy/ascii.tar.gz">ASCII Zip</a>
+	    </p>
+	    <p class="text"><a href="climatology/2.2/NOy/netcdf.tar.gz">netCDF Zip</a>
+	    </p>
+	    <hr>
+	</div> <!-- clm_main -->
+	
+	<div id="clm_how">
+	    <h2>How to Cite:</h2>
+	    <p class="text"> In any publications using ACE data, such as this climatology, it is important to acknowledge the Canadian 
+			     Space Agency for the funding of the SCISAT satellite. Any text that recorecognizes the Canadian Space 
+			     Agency as funding the ACE Mission is permitted, but we have provided a sample to use that meets this 
+			     requirement. This simple statement has been used in many publications with ACE data.
+	    <P class="text"><U>Sample ACE Acknowledgement:</U></P>
+	    <p class="text">The Atmospheric Chemistry Experiment (ACE), also known as SCISAT, is a Canadian-led mission mainly 
+			     supported by the Canadian Space Agency (CSA).  
+	    </p>
+	</div> <!-- clm_how -->
+{% endblock %}

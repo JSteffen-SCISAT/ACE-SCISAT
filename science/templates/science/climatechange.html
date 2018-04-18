@@ -1,0 +1,65 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:index' %}">Science</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:climatechange' %}">Climate Change</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<h1>Stratospheric Ozone Loss and Climate Change</h1>
+<h2>Part 2.4 from <span class="sci_title">ACE: An Overview</span> by Dr. Peter Bernath</h2>
+<p class="text">
+	Since it was first realized that low temperatures (and high chlorine amounts) drove the 
+	polar ozone loss, there has been speculation regarding possible connections between the 
+	build-up of CO<sub>2</sub> and other IR-active gases and polar ozone loss. The increase 
+	of these greenhouse gases, while leading to increased IR heating in the troposphere 
+	leads to enhanced cooling in the stratosphere and stratosphere temperatures are expected 
+	to decrease due to cooling to space from the increased levels of CO<sub>2</sub>. In fact, 
+	this change in the vertical temperature profile has been detected and is taken as strong 
+	evidence for a human influence on climate [<a href="#ref">17</a>]. This increased 
+	stratospheric cooling could affect stratospheric dynamics by making the boreal vortex 
+	more robust [<a href="#ref">18</a>] and could lead to an Arctic ozone hole if CFCs 
+	continued to increase. The recent work by Shindell et al. [<a href="#ref">19</a>] using 
+	a GCM with chemistry suggests that the stratospheric cooling will lead to a prolongation 
+	of ozone loss due to cooler temperatures and PSC formation even though chlorine levels 
+	decrease.
+</p>
+<p class="text">
+	As noted above, Shindell et al. [<a href="#ref">19</a>] used a Global Climate/Middle 
+	Atmospheric Model (GCMAM) with simplified chemistry and constrained ozone transport to 
+	investigate the coupling between chemistry and climate. For the period 2010&#45;2019 they 
+	found that the increase due to radiative cooling of the stratosphere was 1&#45;2 K poleward 
+	of 70&deg;N while there was an additional cooling of 8&#45;10 K attributable to the increased 
+	stability of the Arctic vortex. This dramatic decline in stratospheric temperatures in 
+	their model caused an Arctic ozone hole in the spring with a 2/3 loss of the total ozone 
+	column. An Arctic ozone hole is thus predicted to occur in years 2010&#45;2019, in spite of 
+	anticipated decreases of CFC concentrations because of the implementation of the Montreal 
+	protocol.
+</p>
+<p class="text">
+	The possibility of an Arctic ozone hole is a very disturbing development with strong 
+	political and social implications. In contrast to the Antarctic ozone hole, an Arctic 
+	ozone hole would affect heavily populated parts of the Northern Hemisphere. Our 
+	experimental and theoretical understanding of Arctic chemistry is still in a primitive 
+	state. The possibility of the development of an Arctic ozone hole clearly will require 
+	more detailed modelling studies combined with a detailed complement of measurements. ACE 
+	can contribute to our understanding of the physics, chemistry and dynamics of the 
+	Arctic polar stratosphere.
+</p>
+<p class="noprint">
+	<span style="float:left"><a href="{% url 'science:ozonedecline' %}"><< Previous: Ozone Decline</a></span>
+	<span style="float:right"><a href="{% url 'science:ozonemonitoring' %}">Next: Ozone Monitoring >></a></span>
+</p><br>
+
+<h3>References</h3><a name="ref"></a>
+<ol class="text">
+	<li class="paper_ref" value="17">Santer, B.D. et al., (1996) A search for human influences on the thermal structure of the atmosphere, Nature, 382, 39-46.</li>
+   	<li class="paper_ref" value="18">Austin, J., et al., (1992) Possibility of an Arctic ozone hole in a doubled-CO<sub>2</sub> climate, Nature, 360, 221-225. </li>
+   	<li class="paper_ref" value="19">Shindell, D.T., Rind, D. and Lonergan, P., (1998) Increased polar stratospheric ozone losses and delayed eventual recovery 
+		owing to increased greenhouse-gas concentrations, Nature, 392, 589. </li>
+</ol>	
+{% endblock %}

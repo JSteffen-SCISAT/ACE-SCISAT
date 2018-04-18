@@ -1,0 +1,63 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'climatology:index' %}">Climatology</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+    <div id="clm_title">
+    	<h1>Climatology</h1>
+    </div> <!-- clm_title -->
+    
+    <div id="clm_intro">
+    	<p class="text"> Climatological datasets have been prepared using the ACE-FTS satellite measurements. 
+			 These are monthly and three-monthly mean zonal mean profiles on pressure surfaces. 
+			 They can be used for a variety of studies including model initialization and validation 
+			 and for providing a priori profiles for retrievals or analyses.
+	</p>
+	<p class="text"> The ACE-FTS climatologies are provided for the version 2.2+updates and version 3.5 
+			 datasets. Different averaging and filtering methods were used to prepare these climatological 
+			 datasets so the user is directed to the relevant papers for further details.
+	</p>
+    </div> <!-- clm_intro -->
+	
+    <div id="clm_main">
+	<h2>Version 3.5 Climatologies:</h2>
+	<p class="text">ACE-FTS version 3.5 was used to create a quality-controlled climatology for the 
+			following 21 species (14 of which are baseline species for ACE-FTS): 
+			C<sub>2</sub>H<sub>2</sub>, C<sub>2</sub>H<sub>6</sub>, CCl<sub>2</sub>F<sub>2</sub>, 
+			CCl<sub>3</sub>F, CH<sub>3</sub>OH, CH<sub>4</sub>, ClONO<sub>2</sub>, CO, H<sub>2</sub>CO,
+			H<sub>2</sub>O, HCl, HCN, HCOOH, HF, HNO<sub>3</sub>, N<sub>2</sub>O, 
+			N<sub>2</sub>O<sub>5</sub>, NO, NO<sub>2</sub>, O<sub>3</sub>, and OCS. A climatology 
+			for temperature was also created.
+	</p>
+	<p class="text">The version 3.5 climatology is contained in netCDF files, and may be obtained 
+                        <a href="{% url 'climatology:climatology35' %}">here</a>.
+			<!-- <a href="climatology_3.5.php">here</a>. -->
+	</p>
+	<hr>
+	<h2>Version 2.2 Climatologies:</h2>
+	<p class="text">ACE-FTS version 2.2 (including updates for O<sub>3</sub> and N<sub>2</sub>O<sub>5</sub>) 
+			was used to create a quality-controlled climatology for the following 14 baseline species: 
+			O<sub>3</sub>, H<sub>2</sub>O, CH<sub>4</sub>, N<sub>2</sub>O, CO, NO, NO<sub>2</sub>, 
+			N<sub>2</sub>O<sub>5</sub>, HNO<sub>3</sub>, HCl, ClONO<sub>2</sub>, CCl<sub>3</sub>F,
+			CCl<sub>2</sub>F<sub>2</sub>, and HF. Validation of the baseline species was published in 
+			the ACE Validation Special Issue of <a href="http://www.atmos-chem-phys.org/special_issue114.php">ACP</a>.
+	</p>
+	<p class="text">The version 2.2 climatology is provided in both ASCII and netCDF file formats, 
+                        and may be  obtained <a href="{% url 'climatology:climatology22' %}">here</a>.
+	</p>
+	<h3>version 2.2 - NO<sub>y</sub></h3>
+	<p class="text">A combined NO<sub>y</sub> climatology was prepared from the version 2.2 NO, NO<sub>2</sub>, 
+			N<sub>2</sub>O<sub>5</sub> (update), ClONO<sub>2</sub>, HNO<sub>3</sub>, and 
+			HNO<sub>4</sub> (research product) results.
+	</p>
+	<p class="text">The version 2.2 - NO<sub>y</sub> climatology is provided in both ASCII and netCDF file 
+			formats, and may be obtained <a href="{% url 'climatology:climatology22NOy' %}">here</a>.
+	</p>
+</div><!-- clm_main -->
+{% endblock %}

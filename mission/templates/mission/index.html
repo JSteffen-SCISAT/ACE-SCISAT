@@ -1,0 +1,87 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block head %}
+	{{ block.super }}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="?rss" />
+	<link rel="unapi-server" type="application/xml" title="unAPI" href="{% url 'home:index' %}"/>
+{% endblock head %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'mission:index' %}">Mission</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+		<h1>Mission</h1>
+		<div id="mis_pic1" class="noprint">
+		<img src="{% static "mission/ACE_in_orbit.jpg" %}" width="350" height="300" id="mis_img_pic1" alt="ACE in Orbit" Align="right" style="margin-left:45px;">
+		</div>
+		<!----
+                <div >
+		    <object data="{% static "theme/documents/test ACE.pdf" %}" type="application/pdf" width=100% height=100%>
+                    <p>the test pdf<a href="{% static "theme/documents/test ACE.pdf" %}"> test ACE></a>.</p>
+		</div>
+                -->
+		<p class="text">
+			The Atmospheric Chemistry Experiment (ACE) is a Canadian satellite mission for remote sensing of the Earth's 
+			atmosphere that was launched into a high-inclination (74&deg;), circular low-earth 
+			(650 km from the surface) orbit on August 13, 2003. This orbit gives SCISAT coverage of 
+			tropical, mid-latitude, and polar regions, allowing it to study a range of atmospheric processes. The main goal 
+			of ACE is to study the atmospheric chemistry and dynamics that affect stratospheric ozone depletion, but ACE 
+			measurements are also being used to study ozone depletion in the Antarctic, the relationship between chemistry 
+			and climate change, the atmospheric effects of biomass burning, the effects of aerosols and clouds on the global 
+			energy balance, and many other 
+			<a href="{% url 'science:index' %}"> areas of atmospheric science</a>.
+		</p>
+		<p class="text">
+			The primary instrument on SCISAT is the <a href="{% url 'instruments:fts' %}">ACE&#45;FTS</a>, a high spectral resolution 
+			infrared Fourier Transform Spectrometer (FTS). SCISAT&#45;1 also features a UV-visible-NIR spectrophotometer known as
+			<a href="{% url 'instruments:maestro' %}">MAESTRO</a>. 
+			Working primarily in 
+			<a href="http://databace.scisat.ca/occultation_tool.php">solar occultation</a>
+			mode</a>, the satellite provides altitude profile information (typically 10&#45;100 km) for temperature, pressure, 
+			and the volume mixing ratios (VMRs) of dozens of molecules of atmospheric interest, as well as atmospheric 
+			extinction profiles over the latitudes 85&deg;N to 85&deg;S.
+		</p>
+		<p class="text">
+			As SCISAT orbits the Earth, the FTS measures sequences of atmospheric absorption spectra during sunrise and sunset. 
+			These spectra, measured in the limb viewing geometry with different slant paths and tangent heights are inverted to 
+			obtain vertical profiles of temperature, pressure and many atmospheric trace gases with a vertical resolution of about 
+			4 km from the cloud tops up to about 150 km. In addition, a pair of filtered imagers make high signal-to-noise ratio 
+			(SNR) measurements of atmospheric extinction for the monitoring of aerosols and clouds and provide an important 
+			diagnostic for the variation of the flux over the distorted solar disk in this region. MAESTRO (Measurement of Aerosol 
+			Extinction in the Stratosphere and Troposphere Retrieved by Occultation) is a dual optical spectrophotometer that covers 
+			the 285&#45;1030 nm spectral region. It has a vertical resolution of 1&#45;2 km and measures primarily ozone, nitrogen dioxide, 
+			and aerosol/cloud extinction.
+		</p>
+		<p class="text">
+			The ACE-FTS mission concept is based on the ATMOS (Atmospheric Trace 
+			MOlecule Spectroscopy) instrument that NASA flew four times (1985, 1992, 1993, and 1994) 
+			on the Space Shuttle but the ACE-FTS has been miniaturized by nearly a factor of 10 in mass, power, and volume as 
+			compared to ATMOS. With fewer than 400 occultations, ATMOS has made and continues to make valuable contributions to 
+			atmospheric science. The ACE-FTS will measure well over 20,000 occultations over its mission lifetime and is augmented 
+			by measurements from the two imagers and MAESTRO. In combination, these instruments are now providing a wealth of scientific 
+                        <a href="../data/scisatdata.html">data</a> 
+			that will be used to help improve our understanding of processes in the Earth's atmosphere for years to come.
+		</p>
+		<br><span id="mis_reference">This information is a combination of text from the following papers:</span><br>
+		<p class="paper_ref">Bernath, Peter (2017), <a href="http://www.ace.uwaterloo.ca/publications/2017/1-s2.0-S0022407316300176-main.pdf" target="_blank">
+                        The Atmospheric Chemistry Experiment (ACE)</a>, Journal of Quantitative Spectroscopy and Radiative Transfer, Vol. 186, pp. 3-16
+                </p>
+
+		<p class="paper_ref">Bernath, Peter (2006), <a href="http://www.ace.uwaterloo.ca/publications/2006/BernathACE-AnalyticalRev2006reprint.pdf" target="_blank">
+			Atmospheric Chemistry Experiment (ACE): Analytical Chemistry from Orbit</a>, Trends in Analytical Chemistry, Vol. 25, No. 7., pp. 647-654
+		</p>
+		<p class="paper_ref"><a name="bernath2005"></a>Bernath, Peter (2005), <a href="http://www.ace.uwaterloo.ca/publications/2005/O-P-news2005.pdf" class="paper_ref_link" target="_blank">
+			Atmospheric Chemistry Experiment: Spectroscopy from Orbit</a>, Optics &amp; Photonics News, 
+			Optical Society of America, pp. 24&#45;27.
+		</p>
+		<p class="paper_ref"><a name="bernath2001"></a>Bernath, Peter (2001), <a href="http://www.ace.uwaterloo.ca/publications/2001/PBChapterACE.pdf" class="paper_ref_link" target="_blank">The Atmospheric Chemistry 
+			Experiment (ACE): An Overview</a>, Spectroscopy from Space, Kluwer Academic Publishers, pp. 147&#45;161.
+		</p>
+
+
+{% endblock %}

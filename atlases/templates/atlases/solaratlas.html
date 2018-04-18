@@ -1,0 +1,80 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'atlases:solar' %}">solar atlas</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block head_addon_bottom %}
+<link href="{% static "atlases/css/atlases.css" %}" rel="stylesheet" type="text/css">
+{% endblock head_addon_bottom %}
+
+{% block content %}
+	<h1>Solar Atlas</h1>
+	<div>
+	<div id="mis_pic1" class="noprint">
+		<img width="400px" height="300px" src="{% static "atlases/img/sunset.jpg" %}" alt="Sunset" align="right" >
+	</div>
+	
+	<div id="sptrm_full">
+		<!-- <p class="text"> -->
+			<h3>Complete Solar Spectrum</h3> 
+			<ul>
+				<li><a href="solarspectrum/ACEsolarSpectrum.pdf">Portable Document Format</a> <span class="sptrm_size">(17.8 MB)</span></li>
+				<li><a href="solarspectrum/ace-solar-spectrum.txt">Digital Data in Plain Text-ASCII (WSpectra)</a> <br><span class="sptrm_size">(15.5 MB)</span></li>
+			</ul>
+		<!-- </p> -->
+	</div>
+	
+	<br>
+	<div id="sptrm_parts">
+		<!-- <p class="text"> -->
+			<h3>In Separate Sections</h3>
+			<ul>
+				<li><a href="solarspectrum/pdf/">Portable Document Format</a><br></li>
+				<li><a href="solarspectrum/eps/">Encapsulated PostScript</a><br></li>
+			</ul>
+		<!-- </p> -->
+	</div>
+	</div>
+	
+	<br>
+	
+	<div id="sptrm_reftitle">
+		<h3>References</h3>
+	</div>
+	<div id="sptrm_refs">
+		<p class="paper_ref">Hase, Frank, Lloyd Wallace, Sean D. McLeod, Jeremy J. Harrison, Peter F. Bernath (2010), 
+			<a href="publications/2010/solar-spec.pdf" class="paper_ref_link">The 
+	ACE&#45;FTS atlas of the infrared solar spectrum</a>, 
+			Journal of Quantitative Spectroscopy and Radiative Transfer, 111, 521&#45;528 (PDF)<br>
+			<span class="sptrm_suppl">Supplementary Material:</span><br>
+				<a href="solarspectrum/ACE-Atlas-Wallace.txt">Assigned Linelist</a> in .txt format<br>
+				<a href="solarspectrum/unassigned_linelist.csv">Unassigned Linelist</a> in .csv format<br>
+		</p>
+		<p class="paper_ref">Colin, Reginald, &amp; Peter F. Bernath (2010), <a href="solarspectrum/CH-solar.pdf" class="paper_ref_link">
+			Revised molecular constants and term values for the X<sup>2</sup>&Pi; state of CH</a>, Journal of Molecular Spectroscopy, 
+			263 (2010) 120&#45;122 (PDF)<br>
+			<span class="sptrm_suppl">Supplementary Material:</span><br>
+			<a href="solarspectrum/CH-supplementary-data.pdf">Supplement Data (PDF)</a><br>
+			<a href="solarspectrum/CH-supplementary-data.doc">Supplement Data (DOC)</a><br>
+		</p>
+		<p class="paper_ref">Ram, R.S., &amp; P.F. Bernath (2010), <a href="solarspectrum/NH-ACE-reprint.pdf" 
+			class="paper_ref_link">Revised molecular constants and term values for the X<sup>3</sup>&Sigma;<sup>-</sup> and A<sup>3</sup>&Pi; states of NH</a>, 
+			Journal of Molecular Spectroscopy, 260 (2010) 115&#45;119 (PDF)<br>
+			<span class="sptrm_suppl">Supplementary Material:</span><br> 
+			<a href="solarspectrum/mmc1.txt">Supplement 1</a><br>
+			<a href="solarspectrum/mmc2.txt">Supplement 2</a><br>
+		</p>
+		<p class="paper_ref">Bernath, Peter F., Reginald Colin (2009), <a href="solarspectrum/OH-reprint.pdf" class="paper_ref_link">Revised 
+			molecular constants and term values for the X<sup>2</sup>&Pi; and B<sup>2</sup>&Sigma;<sup>+</sup> states of OH</a>, Journal of 
+			Molecular Spectroscopy, 257, 20&#45;23<br>
+			<span class="sptrm_suppl">Supplementary Material:</span><br> 
+			<a href="solarspectrum/Supplementary_material_to_OHpaper.pdf">PDF Format</a> or <br>
+			<a href="solarspectrum/Supplementary_material_to_OHpaper.doc">MS Word Format</a><br>
+		</p>
+	</div>
+{% endblock %}

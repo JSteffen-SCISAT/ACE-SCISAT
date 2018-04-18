@@ -1,0 +1,52 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:index' %}">Instruments</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:maestro' %}">MAESTRO</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+	<h1>MAESTRO</h1>
+	<div style="width:205px; float:left; margin-right:25px;">
+			<a href="{% static "instruments/MAESTRO.jpg" %}" class="img single_image" title="MAESTRO Flight Model">
+			<img src="{% static "instruments/MAESTRO.jpg" %}" alt="MAESTRO Flight Model" width="200" height="300" align="left">
+	</a>
+	</div>
+	<p class="text">
+		MAESTRO (Measurement of Aerosol Extinction in the Stratosphere and Troposphere 
+		Retrieved by Occultation) is a small spectrophotometer designed and built in a 
+		partnership among the Meterological Service of Canada (MSC), the University of 
+		Toronto, and EMS Technologies in Ottawa. The 8-kg instrument was designed to 
+		cover the 285&#45;1030 nm region in two overlapping segments. The use of two 
+		spectrographs (280&#45;550 nm, 500&#45;1030 nm) reduces the stray light and permits 
+		simultaneous measurements of the two bands with spectral resolution of 1&#45;2 nm, 
+		depending on wavelength. The detectors are 1024 linear EG&amp;G Reticon 
+		photodiode arrays.
+	</p>
+	<p class="text noprint">
+		Click here to see <a href="{% static "instruments/MAESTRO_illustrated.jpg" %}"  class="single_image" title="Labelled Illustration of MAESTRO">a labelled illustration of the MAESTRO instrument</a>.
+	</p>
+	<p class="text">
+		The design is based on a simple concave grating with no moving parts. The 
+		entrance slit is held horizontal with respect to the horizon during sunrise. 
+		The ACE&#45;FTS, imagers, and MAESTRO all share a single suntracker and have 
+		approximately the same direction of view. The MAESTRO SNR is in excess of 1000. 
+		While the ACE mission works primarily by solar occultation, MAESTRO is also able 
+		to make near&#45;nadir solar backscatter measurements like the GOME instrument on 
+		the European ERS&#45;2 satellite.
+	</p>
+	<p class="text noprint">
+		See the <a href="gallery.php">Gallery</a> for more pictures of MAESTRO
+	</p>
+
+	<br>
+	<p class="noprint">
+		<span style="float:left"><a href="{% url 'instruments:fts' %}"><< Previous: ACE-FTS</a></span>
+		<span style="float:right"><a href="{% url 'instruments:testing' %}">Next: Testing >></a></span>
+	</p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "theme/base.html" %}
+{% load staticfiles %}
+
+<title>{% block title %}ACE/SCISAT - The Atmospheric Chemistry Experiment - Acknowledgment{% endblock title %}</title>
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'home:acknowledgment' %}">Acknowledgment</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<h2>Acknowledgment</h2>
+<br>
+<div class="grid grid--full grid--gutters large-grid--fit">
+    <div class="grid__cell" id="popout">
+        <p>The Atmospheric Chemistry Experiment (ACE), also known as SCISAT, is a Canadian-led mission mainly supported by the Canadian Space Agency (CSA).
+        </p>
+    </div>
+</div>
+{% endblock content %}

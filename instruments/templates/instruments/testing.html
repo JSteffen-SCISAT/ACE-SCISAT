@@ -1,0 +1,79 @@
+{% extends "theme/base.html" %}
+{% load static %}
+{% load staticfiles %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:index' %}">Instruments</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:testing' %}">Testing</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+        <h1>Prelaunch Instrument Testing</h1>
+	<div style="width:280px; float:right; margin-left:20px;" class="noprint">
+                <a href="{% static "instruments/coldshroud2.jpg" %}" class="img single_image" title="Cold Shroud Mounted Inside tVAC">
+                    <img src="{% static "instruments/coldshroud2.jpg" %}" alt="Cold Shroud Mounted Inside TVAC" width="275" height="240" title="Cold Shroud Mounted Inside TVAC" style="float:right" title="Second Title">
+                </a>
+		<p align="center" class="instr_figcaption">
+		    Cylindrical copper cold shroud being mounted inside the Thermal Vacuum Chamber (TVAC)
+		</p>
+	</div>
+	<p class="text">
+		Instrument testing was carried out prior to launch in order 
+		to test the instruments in a simulated space environment. In 
+		September 2002, the FTS underwent acceptance tests carried out 
+		by ABB Bomem at their facility in Quebec City and from February 
+		to March 2003, approximately six weeks were spent testing the 
+		ACE-FTS (including the imagers) and MAESTRO at the Instrument 
+		Calibration Facility (ICF) in the Department of Physics at the 
+		University of Toronto. The Toronto tests were generally 
+		intended to integrate the ACE-FTS and MAESTRO so that all 
+		instruments could be tested simultaneously under on-orbit 
+		conditions to determine their performance capability to achieve 
+		the ACE science goals.
+	</p><br>
+	<div style="width:280px; float:left; margin-right:35px;" class="noprint">
+                <a href="{% static "instruments/instruments2.jpg" %}" class="img single_image" title="Instruments being Mounted Inside TVAC">
+                    <img src="{% static "instruments/instruments2.jpg" %}" alt="instruments being mounted inside TVAC" width="275" height="240" title="Instruments Being Mounted In TVAC" style="float:left" title="Second Title">
+                </a>
+	        <p align="center" class="instr_figcaption">
+	            ACE instruments being mounted on the simulation baseplate
+	        </p>
+	</div>		
+	<p class="text">Some more specific objectives of testing were to:</p>
+	<ul>
+		<li style="margin-left:25px">Test the performance of the FTS using the passive cooler</li>
+		<li style="margin-left:25px">Perform gas cell measurements using the FTS and MAESTRO</li>
+		<li style="margin-left:25px">Carry out complete testing of the solar imagers</li>
+		<li style="margin-left:25px">Characterize the sun-tracker pointing co-ordinates</li>
+	</ul>
+	<br>
+	<p style="clear:left">
+		A more detailed description of instrument testing can be found in the following paper: 
+	</p>
+	<p class="paper_ref">
+		Nassar, Ray, Chris Boone, Kaley A. Walker, Sean D. McLeod and Peter F. Bernath (2003), 
+		<a href="{% static "instruments/SPIE_2003_RN.pdf" %}" target="_blank">SCISAT: Retrieval algorithms, 
+		ACE-FTS testing and the ACE database</a>, in Proceeding of SPIE vol. 5151, Earth 
+		Observing systems VIII, edited by William L. Barnes (Bellingham, WA)
+	</p>
+	<br>
+	<div style="float:left; width:275px;" class="noprint">
+		<a href="{% static "instruments/insideTVAC2.jpg" %}" class="img single_image" style="float:left" title="ACE Inside TVAC">
+			<img src="{% static "instruments/insideTVAC2.jpg" %}" width="275" height="240" alt="ACE inside TVAC" >
+		</a>
+		<p align="center" class="instr_figcaption"> ACE inside the TVAC </p>
+	</div>
+	<div style="float:right; width:275px" class="noprint">
+		<a href={% static "instruments/instruments_gold2.jpg" %} class="img single_image" style="float:right" title="ACE in Gold Foil">
+			<img src="{% static "instruments/instruments_gold2.jpg" %}" width="275" height="240" alt="ACE in gold foil">
+		</a>
+		<p align="center" class="instr_figcaption">
+			 ACE instruments, wrapped in gold foil, mounted on the simulation baseplate
+		</p>
+	</div>
+
+
+{% endblock %}

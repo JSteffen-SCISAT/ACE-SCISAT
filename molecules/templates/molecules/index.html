@@ -1,0 +1,101 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block head_addon_bottom %}
+<link href="{% static "molecules/css/molecules.css" %}" rel="stylesheet" type="text/css">
+{% endblock head_addon_bottom %}
+
+{% block footer_addon_js %}
+<script type="text/javascript" src="{% static "molecules/js/molecules.js" %}"></script>
+{% endblock footer_addon_js %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'molecules:index' %}">Molecule List</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+<div id='mol_titlebox'><h1>ACE-FTS Molecules</h1></div>
+
+<div class='mol_legend'><span class='mol_legtitle'><strong>Legend: </strong></span>P &#45; Polar E &#45; Equator<br></div>
+<table class='mol_table' border='1'><caption><sup><span id='dagger'>&#8224;</span></sup> indicates altitude range of the molecule in Research Mode</caption><tr class='toprow'>
+<td rowspan=2>Molecule</td><td colspan=2>Altitude (km)</td><td rowspan=2>Publications</td></tr><tr class='toprow'><td>V2.2 + updates</td><td>V3.0/V3.5</td></tr>
+
+<tr class="molhead"><td class='molcol'>O<sub>3</sub></td><td class='altcol'>5 - 95</td><td class='altcol'>5 - 95</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sub>3</sub></a></td></tr>
+{% for pub in list %}
+<tr class='pubrow'><td></<td><td></td><td></td><td>{{ pub }}</td></tr>
+{% endfor %}
+<tr class="molhead"><td class='molcol'>H<sub>2</sub>O</td><td class='altcol'>5 - 89</td><td class='altcol'>5 - 101</td><td class='refcol'><a class='mol_toggleother'>Publications with H<sub>2</sub>O</a></td></tr>
+<tr class='pubrow'><td></<td><td></td><td></td><td>{{ list.0 }}</td></tr>
+<tr class='pubrow'><td></<td><td></td><td></td><td>{{ list.1 }}</td></tr>
+
+<tr class="molhead"><td class='molcol'>CH<sub>4</sub></td><td class='altcol'>5 - 62</td><td class='altcol'>5 - 75</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sub>4</sub></a></td></tr>
+<tr class="molhead"><td class='molcol'>N<sub>2</sub>O</td><td class='altcol'>5 - 60</td><td class='altcol'>5 - 95</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sub>2</sub>O</a></td></tr>
+<tr><td class='molcol'>NO<sub>2</sub></td><td class='altcol'>13 - 58<br>13 - 45</td><td class='altcol'>7 - 52</td><td class='refcol'><a class='mol_toggleother'>Publications with NO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>NO</td><td class='altcol'>12 - 105</td><td class='altcol'>P: 6 - 107<br>E: 9 - 107</td><td class='refcol'><a class='mol_toggleother'>Publications with NO</a></td></tr>
+<tr><td class='molcol'>HNO<sub>3</sub></td><td class='altcol'>5 - 42<br>5 - 37</td><td class='altcol'>P: 5 - 59<br>E: 5 - 62</td><td class='refcol'><a class='mol_toggleother'>Publications with HNO<sub>3</sub></a></td></tr>
+<tr><td class='molcol'>HCl</td><td class='altcol'>8 - 63<br>8 - 57</td><td class='altcol'>P: 6 - 57<br>E: 7 - 63</td><td class='refcol'><a class='mol_toggleother'>Publications with HCl</a></td></tr>
+<tr><td class='molcol'>HF</td><td class='altcol'>10 - 55<br>10 - 50</td><td class='altcol'>P: 12 - 52<br>E: 12 - 57</td><td class='refcol'><a class='mol_toggleother'>Publications with HF</a></td></tr>
+<tr><td class='molcol'>CO</td><td class='altcol'>5 - 105</td><td class='altcol'>5 - 110</td><td class='refcol'><a class='mol_toggleother'>Publications with CO</a></td></tr>
+<tr><td class='molcol'>CCl<sub>3</sub>F<br>(CFC-11)</td><td class='altcol'>5 - 22</td><td class='altcol'>P: 5 - 23<br>E: 6 - 28</td><td class='refcol'><a class='mol_toggleother'>Publications with CCl<sub>3</sub>F</a></td></tr>
+<tr><td class='molcol'>CCl<sub>2</sub>F<sub>2</sub><br>(CFC-12)</td><td class='altcol'>6 - 28</td><td class='altcol'>P: 5 - 28<br>E: 5 - 36</td><td class='refcol'><a class='mol_toggleother'>Publications with CCl<sub>2</sub>F<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>N<sub>2</sub>O<sub>5</sub></td><td class='altcol'>15 - 40</td><td class='altcol'>8 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sub>2</sub>O<sub>5</sub></a></td></tr>
+<tr><td class='molcol'>ClONO<sub>2</sub></td><td class='altcol'>12 - 35</td><td class='altcol'>P: 10 - 41<br>E: 10 - 36</td><td class='refcol'><a class='mol_toggleother'>Publications with ClONO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>HCN</td><td class='altcol'>7 - 28</td><td class='altcol'>P: 6 - 35<br>E: 8 - 42</td><td class='refcol'><a class='mol_toggleother'>Publications with HCN</a></td></tr>
+<tr><td class='molcol'>CO<sub>2</sub></td><td class='altcol'>-</td><td class='altcol'>5 - 125</td><td class='refcol'><a class='mol_toggleother'>Publications with CO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>HCOOH</td><td class='altcol'>6 - 18</td><td class='altcol'>5 - 20</td><td class='refcol'><a class='mol_toggleother'>Publications with HCOOH</a></td></tr>
+<tr><td class='molcol'>CH<sub>3</sub>OH<br>(methanol)</td><td class='altcol'>5 - 25</td><td class='altcol'>P: 5 - 25<br>E: 6 - 25</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sub>3</sub>OH</a></td></tr>
+<tr><td class='molcol'>COClF</td><td class='altcol'>-</td><td class='altcol'>P: 13 - 25<br>E: 15 - 32</td><td class='refcol'><a class='mol_toggleother'>Publications with COClF</a></td></tr>
+<tr><td class='molcol'>COF<sub>2</sub></td><td class='altcol'>10 - 42<br>10 - 31</td><td class='altcol'>P: 12 - 34<br>E: 12 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with COF<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>CF<sub>4</sub></td><td class='altcol'>20 - 45</td><td class='altcol'>15 - 55</td><td class='refcol'><a class='mol_toggleother'>Publications with CF<sub>4</sub></a></td></tr>
+<tr><td class='molcol'>CH<sub>3</sub>Cl</td><td class='altcol'>9 - 25</td><td class='altcol'>P: 9 - 40<br>E: 12 - 40</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sub>3</sub>Cl</a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>H<sub>6</sub></td><td class='altcol'>6 - 21</td><td class='altcol'>P: 6 - 20<br>E: 7 - 20</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>H<sub>6</sub></a></td></tr>
+<tr><td class='molcol'>SF<sub>6</sub></td><td class='altcol'>8 - 31<br>8 - 22</td><td class='altcol'>P: 8 - 32<br>E: 12 - 32</td><td class='refcol'><a class='mol_toggleother'>Publications with SF<sub>6</sub></a></td></tr>
+<tr><td class='molcol'>OCS</td><td class='altcol'>7 - 25</td><td class='altcol'>P: 6 - 23<br>E: 8 - 31</td><td class='refcol'><a class='mol_toggleother'>Publications with OCS</a></td></tr>
+<tr><td class='molcol'>H<sub>2</sub>CO</td><td class='altcol'>-</td><td class='altcol'>5 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with H<sub>2</sub>CO</a></td></tr>
+<tr><td class='molcol'>HO<sub>2</sub>NO<sub>2</sub></td><td class='altcol'>12 - 25</td><td class='altcol'>10 - 30</td><td class='refcol'><a class='mol_toggleother'>Publications with HO<sub>2</sub>NO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>H<sub>2</sub>O<sub>2</sub></td><td class='altcol'>5 - 12</td><td class='altcol'>P: 5 - 25<br>E: 5 - 40</td><td class='refcol'><a class='mol_toggleother'>Publications with H<sub>2</sub>O<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>CCl<sub>4</sub></td><td class='altcol'>9 - 23</td><td class='altcol'>P: 6 - 25<br>E: 7 - 30</td><td class='refcol'><a class='mol_toggleother'>Publications with CCl<sub>4</sub></a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>H<sub>2</sub></td><td class='altcol'>5 - 15</td><td class='altcol'>P: 5 - 20<br>E: 8 - 20</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>H<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>COCl<sub>2</sub></td><td class='altcol'>7 - 30</td><td class='altcol'>P: 8 - 24<br>E: 10 - 29</td><td class='refcol'><a class='mol_toggleother'>Publications with COCl<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>O<sub>2</sub></td><td class='altcol'>-</td><td class='altcol'>15 - 40</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>N<sub>2</sub></td><td class='altcol'>15 - 40</td><td class='altcol'>15 - 48</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>Cl<sub>3</sub>F<sub>2</sub><br>(HCFC-142b)</td><td class='altcol'>8 - 19</td><td class='altcol'>5 - 21</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>Cl<sub>3</sub>F<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>CHClF<sub>2</sub><br>(HCFC-22)</td><td class='altcol'>5 - 25</td><td class='altcol'>5 - 30</td><td class='refcol'><a class='mol_toggleother'>Publications with CHClF<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>Cl<sub>3</sub>F<sub>3</sub><br>(CFC-113)</td><td class='altcol'>7 - 17</td><td class='altcol'>7 - 20</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>Cl<sub>3</sub>F<sub>3</sub></a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>H<sub>3</sub>Cl<sub>2</sub>F<br>(HCFC-141b)</td><td class='altcol'>-</td><td class='altcol'>P: 6 - 22<br>E: 8 - 22</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>H<sub>3</sub>Cl<sub>2</sub>F</a></td></tr>
+<tr><td class='molcol'>CH<sub>2</sub>FCF<sub>3</sub><br>(HFC-134a)</td><td class='altcol'>-</td><td class='altcol'>-</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sub>2</sub>FCF<sub>3</sub></a></td></tr>
+<tr><td class='molcol'>CHF<sub>3</sub><br>(HFC-23)</td><td class='altcol'>-</td><td class='altcol'>P: 5 - 25<br>E: 7 - 25</td><td class='refcol'><a class='mol_toggleother'>Publications with CHF<sub>3</sub></a></td></tr>
+<tr><td class='molcol'>ClO</td><td class='altcol'>11 - 30</td><td class='altcol'>-</td><td class='refcol'><a class='mol_toggleother'>Publications with ClO</a></td></tr>
+<tr><td class='molcol'>HOCl</td><td class='altcol'>8 - 18</td><td class='altcol'>-</td><td class='refcol'><a class='mol_toggleother'>Publications with HOCl</a></td></tr>
+<tr><td class='molcol'>C<sub>2</sub>H<sub>4</sub></td><td class='altcol'>-</td><td class='altcol'>-</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>2</sub>H<sub>4</sub></a></td></tr>
+<tr><td class='molcol'>C<sub>3</sub>H<sub>6</sub>O</td><td class='altcol'>-</td><td class='altcol'>P: 5 - 22<br>E: 7 - 22</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sub>3</sub>H<sub>6</sub>O</a></td></tr>
+<tr><td class='molcol'>CH<sub>3</sub>C(O)OONO<sub>2</sub><br>(PAN)</td><td class='altcol'>-</td><td class='altcol'>7 - 20</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sub>3</sub>C(O)OONO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>SO<sub>2</sub></td><td class='altcol'>-</td><td class='altcol'>12 - 25</td><td class='refcol'><a class='mol_toggleother'>Publications with SO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>HDO</td><td class='altcol'>5 - 38</td><td class='altcol'>P: 5 - 42<br>E: 5 - 50</td><td class='refcol'><a class='mol_toggleother'>Publications with HDO</a></td></tr>
+<tr><td class='molcol'>OC<sup>17</sup>O</td><td class='altcol'>-</td><td class='altcol'>50 - 100</td><td class='refcol'><a class='mol_toggleother'>Publications with OC<sup>17</sup>O</a></td></tr>
+<tr><td class='molcol'>O<sup>13</sup>C<sup>18</sup>O</td><td class='altcol'>-</td><td class='altcol'>45 - 80</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sup>13</sup>C<sup>18</sup>O</a></td></tr>
+<tr><td class='molcol'><sup>18</sup>OO<sub>2</sub></td><td class='altcol'>-</td><td class='altcol'>5 - 50</td><td class='refcol'><a class='mol_toggleother'>Publications with <sup>18</sup>OO<sub>2</sub></a></td></tr>
+<tr><td class='molcol'>O<sup>18</sup>OO</td><td class='altcol'>-</td><td class='altcol'>5 - 50</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sup>18</sup>OO</a></td></tr>
+<tr><td class='molcol'>O<sup>17</sup>OO</td><td class='altcol'>-</td><td class='altcol'>5 - 50</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sup>17</sup>OO</a></td></tr>
+<tr><td class='molcol'>N<sup>15</sup>NO</td><td class='altcol'>5 - 40</td><td class='altcol'>P: 5 - 42<br>E: 5 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sup>15</sup>NO</a></td></tr>
+<tr><td class='molcol'><sup>15</sup>NNO</td><td class='altcol'>8 - 30</td><td class='altcol'>P: 7 - 45<br>E: 9 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with <sup>15</sup>NNO</a></td></tr>
+<tr><td class='molcol'>N<sub>2</sub><sup>18</sup>O</td><td class='altcol'>7 - 27</td><td class='altcol'>5 - 45</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sub>2</sub><sup>18</sup>O</a></td></tr>
+<tr><td class='molcol'>H<sub>2</sub><sup>17</sup>O</td><td class='altcol'>7 - 50</td><td class='altcol'>5 - 52</td><td class='refcol'><a class='mol_toggleother'>Publications with H<sub>2</sub><sup>17</sup>O</a></td></tr>
+<tr><td class='molcol'><sup>13</sup>CO</td><td class='altcol'>-</td><td class='altcol'>5 - 90</td><td class='refcol'><a class='mol_toggleother'>Publications with <sup>13</sup>CO</a></td></tr>
+<tr><td class='molcol'>C<sup>18</sup>O</td><td class='altcol'>-</td><td class='altcol'>P: 5 - 30<br>E: 6 - 30</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sup>18</sup>O</a></td></tr>
+<tr><td class='molcol'>C<sup>17</sup>O</td><td class='altcol'>-</td><td class='altcol'>8 - 25</td><td class='refcol'><a class='mol_toggleother'>Publications with C<sup>17</sup>O</a></td></tr>
+<tr><td class='molcol'><sup>13</sup>CH<sub>4</sub></td><td class='altcol'>5 - 45</td><td class='altcol'>5 - 50</td><td class='refcol'><a class='mol_toggleother'>Publications with <sup>13</sup>CH<sub>4</sub></a></td></tr>
+<tr><td class='molcol'>CH<sup>3</sup>D</td><td class='altcol'>6 - 30</td><td class='altcol'>P: 6 - 30<br>E: 6 - 35</td><td class='refcol'><a class='mol_toggleother'>Publications with CH<sup>3</sup>D</a></td></tr>
+<tr><td class='molcol'>OC<sup>34</sup>S</td><td class='altcol'>-</td><td class='altcol'>P: 8 - 23<br>E: 10 - 31</td><td class='refcol'><a class='mol_toggleother'>Publications with OC<sup>34</sup>S</a></td></tr>
+<tr><td class='molcol'>O<sup>13</sup>CS</td><td class='altcol'>-</td><td class='altcol'>P: 7 - 23<br>E: 9 - 31</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sup>13</sup>CS</a></td></tr>
+<tr><td class='molcol'>H<sub>2</sub><sup>18</sup>O</td><td class='altcol'>5 - 65</td><td class='altcol'>P: 5 - 65<br>E: 8 - 75</td><td class='refcol'><a class='mol_toggleother'>Publications with H<sub>2</sub><sup>18</sup>O</a></td></tr>
+<tr><td class='molcol'>N<sub>2</sub><sup>17</sup>O</td><td class='altcol'>-</td><td class='altcol'>P: 10 - 35<br>E: 14 - 35</td><td class='refcol'><a class='mol_toggleother'>Publications with N<sub>2</sub><sup>17</sup>O</a></td></tr>
+<tr><td class='molcol'>O<sup>13</sup>CO</td><td class='altcol'>-</td><td class='altcol'>P: 5 - 110<br>E: 10 - 110</td><td class='refcol'><a class='mol_toggleother'>Publications with O<sup>13</sup>CO</a></td></tr>
+<tr><td class='molcol'>OC<sup>18</sup>O</td><td class='altcol'>-</td><td class='altcol'>5 - 105</td><td class='refcol'><a class='mol_toggleother'>Publications with OC<sup>18</sup>O</a></td></tr>
+</table><br><div id='mol_3rdtitlebox'><a name='clouds'></a><h2>Clouds &amp; Aerosols</h2></div><table class='mol_table' border='1'><tr class='toprow'><td></td><td>Publications</td></tr><tr><td class='cloudcol'>Clouds &amp; Aerosols</td><td><a class='mol_toggleother'>Publications with Clouds &amp; Aerosols</a></td></tr>
+</span></td></tr></table><div id='mol_4thtitlebox'><a name='temperature'></a><h2>Temperature</h2></div><table class='mol_table' border='1'><tr class='toprow'><td>Temperature</td><td>Altitude (km)</td><td>Source</td></tr><tr><td rowspan=3 class='tempcol'>V2.2</td><td class='altcol'>0 - 12</td><td>Canadian Weather Service</td></tr><tr><td class='altcol'>12 - 120<br><span class='text_ital'>(Retrieved)</span></td><td><a class='mol_temptoggleval'>v2.2 Temperature Validation paper</a><br><a class='mol_temptoggleother'>Publications with v2.2 Temperature</a></td></tr>
+</span></td></tr><tr><td class='altcol'>120 - 150</td><td>MSIS</td></tr><tr><td rowspan=3 class='tempcol'>V3.0</td><td class='altcol'>0 - 15</td><td>Canadian Weather Service</td></tr><tr><td class='altcol'>15 - 125<br><span class='text_ital'>(Retrieved)</span></td><td><a class='mol_temptoggleval'>v3.0/V3.5 Temperature Validation paper</a><br><a class='mol_temptoggleother'>Publications with v3.0 Temperature</a></td></tr>
+</span></td></tr><tr><td class='altcol'>125 - 150</td><td>MSIS (scaled)</td></tr></table>
+{% endblock %}

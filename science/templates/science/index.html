@@ -1,0 +1,37 @@
+{% extends "theme/base.html" %}
+{% load static %}
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'science:index' %}">Science</a></span></li>
+{% endblock breadcrumb__links %}
+
+{% block content %}
+		<h2>The scientific goals for the ACE mission include:</h2>
+		<ol><li>Understanding the chemical and dynamical processes that 
+				control the distribution of ozone in the stratosphere and 
+				upper troposphere, particularly in the Arctic</li>
+			<li>Exploring the relationship between atmospheric chemistry 
+				and climate change</li>
+			<li>Studying the effects of biomass burning on the free 
+				troposphere</li>
+			<li>Measuring aerosols and clouds to reduce the uncertainties 
+				in their effects on the global energy balance</li>
+		</ol>
+                <!--
+		<p class="text">
+                         This goes to <a href="../mission/intro2.html"> ../mission/intro2 (works)</a>
+                         This goes to <a href="../mission/introduction.html"> ../mission/introduction (works)</a>
+                         This goes to <a href="../science/goals.html"> ../science/goals (works)</a>
+                         This goes to <a href="../instruments/fts.html"> ../instruments/fts (works)</a>
+                         This goes to <a href="../sfmdata/scisatdata.html"> ../sfmdata/scisatdata (works)</a>
+                         This goes to <a href="../../templates/mission/intro2.html"> ../../templates/mission/intro2. (fails)</a>
+                         This goes to <a href="../../../mission/templates/mission/intro2.html"> ../../../mission/templates/mission/intro2. (fails)</a>
+                         This goes to <a href="mission/templates/mission/intro2.html"> mission/templates/mission/intro2. (fails)</a>
+		</p>
+                -->
+<p class="noprint">
+	<span style="float:right"><a href="{% url 'science:ozonedecline' %}">Next: Ozone Decline >></a></span>
+</p><br>
+{% endblock %}

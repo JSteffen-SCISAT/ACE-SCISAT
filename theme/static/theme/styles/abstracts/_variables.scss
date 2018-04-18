@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// Note on SASS defaults - http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_
+// Most colours taken from UWaterloo Colour-Palette - https://uwaterloo.ca/brand/visual-expression/colour-palette
+// -----------------------------------------------------------------------------
+
+/// ACE/SCISAT (UW) Branding Colors
+$ace-blue: rgb(0,51,190);
+$ace-light-blue: rgb(0,115,206);
+$ace-sky-blue: rgb(99,160,255);
+$ace-red: rgb(183,18,51);
+$ace-bright-red: rgb(228,23,64);
+$ace-green: rgb(120,139,0);
+$ace-violet: rgb(129,0,180);
+$ace-orange: rgb(231,129,0);
+$ace-dark-gray: rgb(110,110,110); 
+$ace-light-gray: rgb(170,170,170);
+$ace-taupe: rgb(222,217,194);
+$ace-off-white: rgb(243,243,244);
+
+/// White & Black
+$white: rgb(255,255,255);
+$black: rgb(0,0,0);
+
+/// Breadcrumb Row
+$breadcrumb-bg: rgb(245,245,245);
+$breadcrumb-text: rgb(170,170,170);
+
+/// Copy text color
+$text-color: rgb(34, 34, 34);
+
+// Default Theme Fonts
+$ace-font-bold: "HelveticaNeueW02-75Bold", Helvetica, sans-serif;
+$ace-font-light: "HelveticaNeueW02-45Ligh", Helvetica, sans-serif;
+$ace-font-pal: "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+$ace-font-ultra-light: "HelveticaNeueW01-UltLt", Helvetica, sans-serif;
+
+/*
+$ace-font-ultra-light: "HelveticaNeueW01-UltLt", Helvetica, sans-serif;
+$ace-font-medium: "HelveticaNeueW02-65Medi", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$ace-font-roma: "HelveticaNeueW02-55Roma", Helvetica, sans-serif;
+*/
+
+/// Container's maximum width
+$max-width: 1450px;
+$large: 1250px;
+$medium: 850px;
+$small: 620px;

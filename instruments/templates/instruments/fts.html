@@ -1,0 +1,73 @@
+{% extends "theme/base.html" %}}
+{% load static %}
+
+
+
+{% block breadcrumb__links %}
+  <li class="breadcrumb__primary"><a href="{% url 'home:index' %}">Home</a></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:index' %}">Instruments</a></span></li>
+  <li class="breadcrumb__addon"><i class="fa fa-angle-double-right"></i></li>
+  <li class="breadcrumb__addon"><span><a href="{% url 'instruments:fts' %}">ACE-FTS</a></span></li>
+{% endblock breadcrumb__links %}
+{% block content %}
+	<h1>ACE-FTS</h1>
+	
+	<div id="inst_pic1">
+	    <a href="{% static "instruments/FTS_interferometer_side2.jpg" %}" class="img single_image" title="Interferometer side of the FTS">
+	        <img style="margin-right:25px;" src="{% static "instruments/FTS_interferometer_side2.jpg" %}" alt="Interferometer side of the FTS" width="200" height="300"  title="Interferometer side of the FTS" align="left">
+	    </a>
+	</div>
+	<p class="text">
+		The ACE-FTS is the main instrument on SCISAT. It is a high spectral 
+		resolution (0.02 cm<sup>-1</sup>) Fourier Transform Spectrometer (FTS) 
+		operating from 2.2 to 13.3 &micro;m (750&#45;4400 cm<sup>-1</sup>) with a 
+		Michelson interferometer that was custom designed and built by 
+		ABB-Bomem in Quebec City.
+	</p>
+	<p class="text">
+		The interferometer uses two cube corners rotating on a central flex pivot 
+		to produce the optical path difference. An &quot;end&quot; mirror inside the 
+		interferometer is used to double pass the radiation and increase the 
+		optical path difference. The ACE-FTS design is fully compensated for tilt 
+		and shear of both moving and stationary optics inside the interferometer. 
+		A pointing mirror, controlled by a suntracker servo-loop, locks on the Sun 
+		center and tracks it while the instrument is taking measurements.
+	</p>
+	<p class="text noprint">
+		Click here to see an <a href="{% static "instruments/FTS_Optical_Layout.jpg" %}" title="Illustration of FTS Optical Layout" class="single_image" >illustration of the FTS optical layout</a>.
+	</p>
+	<div style="padding-left:25px;"id="inst_pic2">
+	    <a href="{% static "instruments/FTS_optics_side2.jpg" %}" class="img single_image" title="Optics side of the FTS">
+	        <img style="margin-left:25px;" src="{% static "instruments/FTS_optics_side2.jpg" %}" alt="Optics side of the FTS" width="200" height="300"  title="Optics side of the FTS" align="right">
+	    </a>
+	</div>
+	<p class="text">
+		The FTS has a circular field of view (FOV) of 1.25 mrad, a mass of about 
+		41 kg, and an average power consumption of 37 W. Double-sided interferograms 
+		are Fourier transformed on the ground to obtain the desired atmospheric spectra. 
+		The FTS uses two photovoltaic detectors (InSb and HgCdTe), aligned with a 
+		dichroic element to have the same field of view. The detectors are cooled 
+		to 80&#45;100 K by a passive radiator pointing toward deep space.
+	</p>
+	<p class="text">
+		Inside the ACE-FTS instrument is a visible/near infrared imager with two filtered 
+		channels at 0.525 and 1.02 &micro;m, chosen to match two of the wavelengths monitored 
+		by the SAGE II satellite instrument. The imagers provide an important diagnostic for 
+		pointing and for detecting the presence of clouds in the FOV. The detectors in the 
+		imagers are filtered CMOS detector arrays, (effectively) 128 &times; 128 active pixel 
+		sensors made by Fill Factory of Mechelen, Belgium . The total FOV of the imagers is 30 
+		mrad, to be compared to the 9 mrad angular diameter of the Sun. The SNR of each solar 
+		image is greater than 1000, but the main image suffers from overlap by weak secondary 
+		images from optical filters that were not tipped far enough off the optical axis. 
+	</p>
+	<p class="text noprint">
+		See the <a href="gallery.php">Gallery</a> for more pictures of the FTS.
+	</p>
+	
+	<br>
+	<p class="noprint">
+		<span style="float:left"><a href="{% url 'instruments:index' %}"><< Previous: Introduction</a></span>
+		<span style="float:right"><a href="{% url 'instruments:maestro' %}">Next: MAESTRO >></a></span>
+	</p><br>
+{% endblock %}

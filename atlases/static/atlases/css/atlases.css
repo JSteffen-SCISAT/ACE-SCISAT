@@ -1,0 +1,15 @@
+.reducesize {
+font-size: 13px;
+}
+ul li{
+list-style-type: none;
+}
+
+ul {
+padding: 0px;
+margin: 0px;
+}
+
+tr th {
+text-align: center;
+}

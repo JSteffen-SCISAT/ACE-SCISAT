@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+/**
+ *  Header
+ */
+header {
+    background-color: $black;
+    padding: 0px 80px 0px 0px;
+    @include breakpoint($small) {
+        padding: 15px;
+    }
+    .align-right {
+        z-index:9999;
+    }
+}
+
+/**
+ *  Logo
+ */
+#logo {
+    max-width: 100%;
+    max-height: 120px;
+    @include breakpoint($medium) {
+        width: 170px;
+    }
+    @include breakpoint($small) {
+        width: 125px;
+    }
+}
+
+/**
+ *  Navicon
+ */
+.navicon {
+    color: $white;
+    padding-right: 0px;
+    @include font-size(27px);
+    display:block;
+    cursor: pointer;
+    @include breakpoint($small) {
+        padding-right: 0px;
+        @include font-size(20px);
+    }
+    @include on-event {
+        color: $ace-light-gray;
+    }
+}
+
+/**
+ *  Banner Title
+ */
+.banner-title {
+    color: $white;
+    font-family: $ace-font-ultra-light;
+    @include font-size(20px);
+    line-height: 22px;
+    padding-left: 10px;
+    @include breakpoint($medium) {
+         @include font-size(17px);
+    }
+    @include breakpoint($small) {
+         @include font-size(13px);
+         padding-left: 5px;
+    }
+}
+
+/**
+ *  Banner Login
+ */
+.banner-login {
+    color: $white;
+    font-family: $ace-font-ultra-light;
+    @include font-size(16px);
+    line-height: 18px;
+    padding-left: 8px;
+    @include breakpoint($medium) {
+         @include font-size(15px);
+    }
+    @include breakpoint($small) {
+         @include font-size(11px);
+         padding-left: 4px;
+    }
+}
